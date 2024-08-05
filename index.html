@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+    <title>Mariel & Rodrigo</title>
+</head>
+<body>
+ <!-- Sección de sobre -->
+ <div id="envelope">
+    <div id="envelope-top"></div>
+    <div id="seal" onclick="openEnvelope()">
+        <h2>M & R</h2>
+    </div>
+    <div id="envelope-bottom"></div>
+</div>
+<!-- Sección de invitación -->
+<div id="invitation" class="hidden">
+    <!-- Foto de la pareja -->
+    <div class="photo-section">
+        <img src="your-photo.jpg" alt="Foto de la pareja" class="photo">
+        <div class="photo-text">
+            <h1>Mariela & Rodrigo</h1>
+            <p>23 de Noviembre, 2024</p>
+        </div>
+    </div>
+    <!-- Reproductor de música -->
+    <div class="music-player">
+        <audio id="audioPlayer" src="your-song.mp3"></audio>
+        <div class="player-controls">
+            <button id="playPauseButton"><i class="fas fa-play" id="playPauseIcon"></i></button>
+            <span id="currentTime">0:00</span>
+            <input type="range" id="progressBar" value="0">
+            <span id="durationTime">0:00</span>
+            <button id="volumeButton"><i class="fas fa-volume-up" id="volumeIcon"></i></button>
+            <input type="range" id="volumeBar" value="100">
+        </div>
+    </div>
+</div>
+<script src="/script.js" defer></script>
+<script src="https://kit.fontawesome.com/your-kit-code.js" crossorigin="anonymous"></script>
+</body>
+</html>
+

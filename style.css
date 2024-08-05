@@ -1,0 +1,163 @@
+body {
+    font-family: 'Lato', sans-serif;
+    color: #333;
+    background-color: #FAF8F0;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+}
+
+#envelope {
+    position: relative;
+    width: 300px;
+    height: 200px;
+    perspective: 1000px;
+}
+
+#envelope-top, #envelope-bottom {
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    background: #fff;
+    border: 2px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 1s ease-in-out;
+}
+
+#envelope-top {
+    top: 0;
+    transform-origin: bottom;
+    background: #f5f5f5;
+}
+
+#envelope-bottom {
+    bottom: 0;
+    transform-origin: top;
+    background: #f5f5f5;
+}
+
+#seal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    background: #b29a68;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 1;
+}
+
+#seal h2 {
+    font-family: 'Great Vibes', cursive;
+    color: #fff;
+    margin: 0;
+}
+
+#invitation {
+    text-align: center;
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+#invitation.show {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.photo-section {
+    position: relative;
+    text-align: center;
+}
+
+.photo {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.photo-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+}
+
+.photo-text h1 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 40px;
+    margin: 0;
+}
+
+.photo-text p {
+    font-size: 20px;
+}
+
+.music-player {
+    margin-top: 20px;
+}
+
+.player-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+#progressBar, #volumeBar {
+    width: 100px;
+}
+
+#playPauseButton, #volumeButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #333;
+}
+
+@media (max-width: 600px) {
+    #initials {
+        font-size: 50px;
+    }
+
+    #hover-text {
+        font-size: 16px;
+    }
+
+    .photo-text h1 {
+        font-size: 30px;
+    }
+
+    .photo-text p {
+        font-size: 16px;
+    }
+
+    .player-controls {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    #progressBar, #volumeBar {
+        width: 80%;
+    }
+}
+
