@@ -1,67 +1,139 @@
+const guests = [
+    {
+        name: "Juan Pérez",
+        passes: 2,
+        adults: 2,
+        children: 0
+    },
+    {
+        name: "Ana López",
+        passes: 3,
+        adults: 2,
+        children: 1
+    }
+];
+
+const wishes = [];
+
+let currentSlide = 0;
+
 function openEnvelope() {
     const envelopeTop = document.getElementById('envelope-top');
     const envelopeBottom = document.getElementById('envelope-bottom');
     const seal = document.getElementById('seal');
+    const envelope = document.getElementById('envelope');
     const invitation = document.getElementById('invitation');
 
-    envelopeTop.style.transform = 'rotateX(-180deg)';
-    envelopeBottom.style.transform = 'rotateX(180deg)';
+    envelopeTop.style.transform = 'translateY(-100vh)';
+    envelopeBottom.style.transform = 'translateY(100vh)';
 
     setTimeout(() => {
-        seal.style.display = 'none';
-        invitation.classList.add('show');
-    }, 1000); // La duración debe coincidir con la transición de la apertura
+        seal.style.opacity = '0';
+    }, 30); // Reducido para una desaparición rápida
+
+    setTimeout(() => {
+        envelope.classList.add('hidden');
+        invitation.classList.remove('hidden');
+        displayGuestInfo(0); // Cambia el índice según el invitado
+    }, 1000); // Se espera un poco más para ocultar el sobre completo
 }
 
-// Reproductor de música
-const audioPlayer = document.getElementById('audioPlayer');
-const playPauseButton = document.getElementById('playPauseButton');
-const playPauseIcon = document.getElementById('playPauseIcon');
-const progressBar = document.getElementById('progressBar');
-const currentTime = document.getElementById('currentTime');
-const durationTime = document.getElementById('durationTime');
-const volumeButton = document.getElementById('volumeButton');
-const volumeIcon = document.getElementById('volumeIcon');
-const volumeBar = document.getElementById('volumeBar');
-
-audioPlayer.addEventListener('loadedmetadata', () => {
-    progressBar.max = audioPlayer.duration;
-    durationTime.textContent = formatTime(audioPlayer.duration);
-    audioPlayer.play();
-    playPauseIcon.classList.replace('fa-play', 'fa-pause');
+document.addEventListener('scroll', () => {
+    const photoSections = document.querySelectorAll('.photo-section');
+    photoSections.forEach(photoSection => {
+        const speed = photoSection.getAttribute('data-speed');
+        const yPos = -(window.scrollY * speed / 100);
+        photoSection.style.transform = `translateY(${yPos}px)`;
+    });
 });
 
-audioPlayer.addEventListener('timeupdate', () => {
-    progressBar.value = audioPlayer.currentTime;
-    currentTime.textContent = formatTime(audioPlayer.currentTime);
-});
+// Función para iniciar el contador
+function initializeCountdown(targetDate) {
+    const countdown = setInterval(() => {
+        const now = new Date().getTime();
+        const distance = targetDate - now;
 
-playPauseButton.addEventListener('click', () => {
-    if (audioPlayer.paused) {
-        audioPlayer.play();
-        playPauseIcon.classList.replace('fa-play', 'fa-pause');
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById('days').textContent = days;
+        document.getElementById('hours').textContent = hours;
+        document.getElementById('minutes').textContent = minutes;
+        document.getElementById('seconds').textContent = seconds;
+
+        if (distance < 0) {
+            clearInterval(countdown);
+            document.querySelector('.countdown').textContent = "¡La boda ya ocurrió!";
+        }
+    }, 1000);
+}
+
+// Función para mostrar la información del invitado
+function displayGuestInfo(index) {
+    const guest = guests[index];
+    document.getElementById('guest-name').textContent = guest.name;
+    document.getElementById('passes').textContent = guest.passes;
+    document.getElementById('adults').textContent = guest.adults;
+    document.getElementById('children').textContent = guest.children;
+}
+
+// Funciones del carrusel
+function showSlide(index, carouselId) {
+    const slides = document.querySelectorAll(`#${carouselId}-carousel .carousel-item`);
+    if (index >= slides.length) {
+        currentSlide = 0;
+    } else if (index < 0) {
+        currentSlide = slides.length - 1;
     } else {
-        audioPlayer.pause();
-        playPauseIcon.classList.replace('fa-pause', 'fa-play');
+        currentSlide = index;
     }
-});
-
-progressBar.addEventListener('input', () => {
-    audioPlayer.currentTime = progressBar.value;
-});
-
-volumeButton.addEventListener('click', () => {
-    audioPlayer.muted = !audioPlayer.muted;
-    volumeIcon.classList.toggle('fa-volume-up');
-    volumeIcon.classList.toggle('fa-volume-mute');
-});
-
-volumeBar.addEventListener('input', () => {
-    audioPlayer.volume = volumeBar.value / 100;
-});
-
-function formatTime(seconds) {
-    const minutes = Math.floor(seconds / 60);
-    seconds = Math.floor(seconds % 60);
-    return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+    slides.forEach((slide, i) => {
+        slide.style.transform = `translateX(${(i - currentSlide) * 100}%)`;
+    });
 }
+
+function nextSlide(carouselId) {
+    showSlide(currentSlide + 1, carouselId);
+}
+
+function prevSlide(carouselId) {
+    showSlide(currentSlide - 1, carouselId);
+}
+
+// Función para dar la vuelta a las tarjetas
+function flipCard(card) {
+    card.classList.toggle('flipped');
+}
+
+// Funciones para los buenos deseos
+function toggleWishes() {
+    const wishesDiv = document.getElementById('wishes');
+    wishesDiv.classList.toggle('hidden');
+    wishesDiv.innerHTML = wishes.map(wish => `<p><strong>${wish.name}:</strong> ${wish.message}</p>`).join('');
+}
+
+function toggleWishForm() {
+    document.getElementById('wish-form').classList.toggle('hidden');
+}
+
+function submitWish() {
+    const name = document.getElementById('wish-name').value;
+    const message = document.getElementById('wish-message').value;
+    wishes.push({ name, message });
+    document.getElementById('wish-name').value = '';
+    document.getElementById('wish-message').value = '';
+    toggleWishForm();
+    toggleWishes();
+}
+
+// Función para cambiar la foto principal en la galería
+function changePhoto(element) {
+    const mainPhoto = document.getElementById('main-photo');
+    mainPhoto.src = element.src;
+}
+
+// Iniciar el contador
+const weddingDate = new Date('2024-11-23T00:00:00').getTime();
+initializeCountdown(weddingDate);

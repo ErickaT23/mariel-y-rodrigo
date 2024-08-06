@@ -1,45 +1,54 @@
 body {
-    font-family: 'Lato', sans-serif;
-    color: #333;
-    background-color: #FAF8F0;
     margin: 0;
     padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    overflow: hidden;
-    background-size: cover;
-    background-position: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: oblique;
+    background-color: rgba(249, 233, 235, 0.631);
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Cinzel Decorative', serif;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-style: normal;
 }
 
 #envelope {
-    position: relative;
-    width: 300px;
-    height: 200px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
     perspective: 1000px;
+    z-index: 10;
 }
 
 #envelope-top, #envelope-bottom {
     position: absolute;
     width: 100%;
     height: 50%;
-    background: #fff;
-    border: 2px solid #ccc;
+    background-color: rgba(249, 233, 235, 0.631);
+    border: 2px solid #b1b0b0;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    transition: transform 1s ease-in-out;
+    transition: transform 1s ease-in-out, opacity 1s ease-in-out;
 }
 
 #envelope-top {
     top: 0;
-    transform-origin: bottom;
-    background: #f5f5f5;
+    border-bottom: none;
+    /*background-image: url(/images/6.png);
+    background-size: cover;*/
+    background-image: linear-gradient(-225deg, #F0F8FF 0%, #ffe4e1 100%);
+
 }
 
 #envelope-bottom {
     bottom: 0;
-    transform-origin: top;
-    background: #f5f5f5;
+    border-top: none;
+    /*background-image: url(/images/6.png);
+    background-size: cover;*/
+    background-image: linear-gradient(-225deg, #FFE4E1 0%, #F0F8FF 100%);
 }
 
 #seal {
@@ -47,50 +56,41 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 60px;
-    height: 60px;
-    background: #b29a68;
+    width: 160px;
+    height: 160px;
+    background-image: linear-gradient(45deg, #ddd4e3c3 0%, #ffdde1 100%);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.216);
     border-radius: 50%;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     cursor: pointer;
-    z-index: 1;
+    transition: opacity 1s ease-in-out;
+    z-index: 11;
 }
 
 #seal h2 {
-    font-family: 'Great Vibes', cursive;
-    color: #fff;
     margin: 0;
+    font-size: 38px;
+    color: white;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.216);
 }
 
-#invitation {
-    text-align: center;
-    width: 100%;
-    max-width: 600px;
-    margin: 20px auto;
-    background: rgba(255, 255, 255, 0.95);
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    opacity: 0;
-    transform: scale(0.9);
-    transition: opacity 1s ease, transform 1s ease;
-}
-
-#invitation.show {
-    opacity: 1;
-    transform: scale(1);
+.hidden {
+    display: none;
 }
 
 .photo-section {
     position: relative;
-    text-align: center;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
 }
 
-.photo {
+.photo-section img {
     width: 100%;
-    border-radius: 10px;
+    height: 100%;
+    object-fit: cover;
 }
 
 .photo-text {
@@ -99,65 +99,544 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     color: white;
+    text-align: center;
     text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
 }
 
 .photo-text h1 {
-    font-family: 'Great Vibes', cursive;
-    font-size: 40px;
+    font-size: 48px;
     margin: 0;
 }
 
-.photo-text p {
-    font-size: 20px;
+.photo-text h2 {
+    font-size: 24px;
+    margin: 10px 0 0;
 }
 
-.music-player {
+.content {
+    padding: 20px;
+    background-color: white;
     margin-top: 20px;
 }
+.fade-in-element {
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+}
 
-.player-controls {
+.fade-in-delay-1 {
+    animation-delay: 0.5s;
+}
+
+.fade-in-delay-2 {
+    animation-delay: 1s;
+}
+
+.fade-in-delay-3 {
+    animation-delay: 1.5s;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+.quote-section {
+    background-color: white;
+    text-align: center;
+    padding: 40px 0;
+}
+
+.quote-section p {
+    font-size: 24px;
+    font-style: italic;
+    margin: 0;
+    color: #333;
+}
+
+.guest-section, .invitation-info-section, .blessing-section, .special-day-section {
+    background-color: #f8f8f8;
+    text-align: center;
+    padding: 20px 0;
+    margin: 20px 0;
+    border: 1px solid #ccc;
+}
+
+.guest-section p, .invitation-info-section p, .blessing-section p, .special-day-section p {
+    margin: 10px 0;
+    font-size: 18px;
+    color: #333;
+}
+
+.itinerary-section {
+    background-color: #f8f8f8;
+    padding: 20px;
+    margin: 20px 0;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+
+.itinerary-section h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.itinerary-item {
     display: flex;
     align-items: center;
+    margin-bottom: 10px;
+}
+
+.itinerary-item i {
+    font-size: 24px;
+    margin-right: 10px;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.itinerary-item i:hover {
+    color: #b29a68;
+}
+
+.itinerary-item p {
+    margin: 0;
+    font-size: 18px;
+    color: #333;
+}
+
+.locations-section {
+    background-color: #f8f8f8;
+    padding: 20px;
+    margin: 20px 0;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+
+.locations-section h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.location-item {
+    margin-bottom: 20px;
+}
+
+.location-item i {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #b29a68;
+}
+
+.location-item p {
+    margin: 5px 0;
+    font-size: 18px;
+    color: #333;
+}
+
+.location-item button {
+    padding: 10px 20px;
+    margin-top: 10px;
+    background-color: #b29a68;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.location-item button:hover {
+    background-color: #a08050;
+}
+
+.accommodation-section {
+    background-color: #f8f8f8;
+    padding: 20px;
+    margin: 20px 0;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+
+.accommodation-section h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.carousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.carousel-content {
+    display: flex;
+    overflow: hidden;
+    width: 80%;
+}
+
+.carousel-item {
+    min-width: 100%;
+    transition: transform 0.5s ease-in-out;
+    text-align: center;
+}
+
+.carousel-item p {
+    margin: 5px 0;
+    font-size: 18px;
+    color: #333;
+}
+
+.carousel-item button {
+    padding: 10px 20px;
+    margin-top: 10px;
+    background-color: #b29a68;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.carousel-item button:hover {
+    background-color: #a08050;
+}
+
+.carousel-button {
+    background-color: transparent;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.carousel-button.left {
+    left: 10px;
+}
+
+.carousel-button.right {
+    right: 10px;
+}
+
+.flip-card {
+    background-color: transparent;
+    width: 100%;
+    height: 300px;
+    perspective: 1000px;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    cursor: pointer;
+}
+
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.flip-card-front {
+    background-color: #fff;
+    color: black;
+}
+
+.flip-card-front img {
+    width: 100%;
+    height: 80%;
+    object-fit: cover;
+}
+
+.flip-card-back {
+    background-color: #b29a68;
+    color: white;
+    transform: rotateY(180deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.gratitude-section, .gifts-section, .dresscode-section, .filter-section, .rsvp-section {
+    background-color: #f8f8f8;
+    text-align: center;
+    padding: 20px 0;
+    margin: 20px 0;
+    border: 1px solid #ccc;
+}
+
+.gratitude-section p, .gifts-section p, .dresscode-section p, .filter-section p, .rsvp-section p {
+    margin: 10px 0;
+    font-size: 18px;
+    color: #333;
+}
+
+.gifts-section h2, .dresscode-section h2, .filter-section h2, .rsvp-section h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.gifts-section button, .filter-section button, .rsvp-section button {
+    padding: 10px 20px;
+    margin-top: 10px;
+    background-color: #b29a68;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.gifts-section button:hover, .filter-section button:hover, .rsvp-section button:hover {
+    background-color: #a08050;
+}
+
+.dresscode-section .icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.dresscode-section i {
+    font-size: 48px;
+    color: #b29a68;
+}
+
+.animated-icon {
+    font-size: 48px;
+    color: #b29a68;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.countdown {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.unit {
+    margin: 0 10px;
+}
+
+.number {
+    font-size: 36px;
+    color: #b29a68;
+}
+
+.label {
+    font-size: 18px;
+    color: #666;
+}
+
+.wishes-section {
+    background-color: #f8f8f8;
+    text-align: center;
+    padding: 20px 0;
+    margin: 20px 0;
+    border: 1px solid #ccc;
+}
+
+.wishes-section h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.wishes-section button {
+    padding: 10px 20px;
+    margin-top: 10px;
+    background-color: #b29a68;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.wishes-section button:hover {
+    background-color: #a08050;
+}
+
+#wish-form {
+    margin-top: 20px;
+    text-align: left;
+}
+
+#wish-form h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+#wish-form label {
+    font-size: 18px;
+    margin: 5px 0;
+    display: block;
+}
+
+#wish-form input, #wish-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+}
+
+.gallery-section {
+    background-color: #f8f8f8;
+    text-align: center;
+    padding: 20px 0;
+    margin: 20px 0;
+    border: 1px solid #ccc;
+}
+
+.gallery-section h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.gallery-main {
+    margin-bottom: 10px;
+}
+
+.gallery-main img {
+    width: 382px;
+    height: 382px;
+    object-fit: cover;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.gallery-main img:hover {
+    transform: scale(1.05);
+}
+
+.gallery-thumbs {
+    display: flex;
     justify-content: center;
     gap: 10px;
 }
 
-#progressBar, #volumeBar {
+.gallery-thumbs img {
     width: 100px;
+    height: 100px;
+    object-fit: cover;
+    cursor: pointer;
+    transition: transform 0.3s;
 }
 
-#playPauseButton, #volumeButton {
-    background: none;
-    border: none;
-    cursor: pointer;
-    color: #333;
+.gallery-thumbs img:hover {
+    transform: scale(1.05);
+}
+
+.photo-full img {
+    width: 100%;
+    height: auto;
+    margin: 20px 0;
+}
+
+.banner-section {
+    background-color: #b29a68;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin: 20px 0;
+    font-size: 24px;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+footer .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+footer .social-icons a {
+    color: white;
+    font-size: 24px;
+    transition: color 0.3s;
+}
+
+footer .social-icons a:hover {
+    color: #b29a68;
+}
+
+footer .logo img {
+    width: 100px;
+    height: auto;
 }
 
 @media (max-width: 600px) {
-    #initials {
-        font-size: 50px;
+    #seal {
+        width: 60px;
+        height: 60px;
     }
 
-    #hover-text {
+    #seal h2 {
         font-size: 16px;
     }
 
     .photo-text h1 {
-        font-size: 30px;
+        font-size: 32px;
     }
 
-    .photo-text p {
+    .photo-text h2 {
+        font-size: 18px;
+    }
+
+    .quote-section p, .guest-section p, .invitation-info-section p, .blessing-section p, .special-day-section p, .itinerary-item p, .location-item p, .dresscode-section p, .animated-icon, .gratitude-section p, .gifts-section p, .filter-section p, .rsvp-section p {
         font-size: 16px;
     }
 
-    .player-controls {
-        flex-direction: column;
-        gap: 5px;
+    .itinerary-section h2, .locations-section h2, .accommodation-section h2, .gifts-section h2, .dresscode-section h2, .filter-section h2, .rsvp-section h2 {
+        font-size: 20px;
     }
 
-    #progressBar, #volumeBar {
-        width: 80%;
+    .itinerary-item i, .location-item i, .dresscode-section i {
+        font-size: 20px;
+    }
+
+    .number {
+        font-size: 24px;
+    }
+
+    .label {
+        font-size: 14px;
+    }
+
+    .carousel-content {
+        width: 90%;
+    }
+
+    .gallery-main img {
+        width: 300px;
+        height: 300px;
+    }
+
+    .gallery-thumbs img {
+        width: 80px;
+        height: 80px;
     }
 }
-

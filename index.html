@@ -1,48 +1,320 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invitación de Boda</title>
+    <link rel="stylesheet" href="/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/style.css">
-    <title>Mariel & Rodrigo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/8435ad2454.js" crossorigin="anonymous"></script>
 </head>
 <body>
- <!-- Sección de sobre -->
- <div id="envelope">
-    <div id="envelope-top"></div>
-    <div id="seal" onclick="openEnvelope()">
-        <h2>M & R</h2>
+    <!-- Sección de sobre -->
+    <div id="envelope">
+        <div id="envelope-top"></div>
+        <div id="seal" onclick="openEnvelope()">
+            <h2 class="fade-in-element">M & R</h2>
+        </div>
+        <div id="envelope-bottom"></div>
     </div>
-    <div id="envelope-bottom"></div>
-</div>
-<!-- Sección de invitación -->
-<div id="invitation" class="hidden">
-    <!-- Foto de la pareja -->
-    <div class="photo-section">
-        <img src="your-photo.jpg" alt="Foto de la pareja" class="photo">
-        <div class="photo-text">
-            <h1>Mariela & Rodrigo</h1>
-            <p>23 de Noviembre, 2024</p>
+    <!-- Sección de invitación -->
+    <div id="invitation" class="hidden">
+        <div class="photo-section fade-in-element">
+            <img src="/images/h3.jpeg" alt="Foto de la pareja" class="photo">
+            <div class="photo-text fade-in-element fade-in-delay-1">
+                <h1>Mariel & Rodrigo</h1>
+                <h2 class="fade-in-delay-2">23 . 11 . 2024</h2>
+            </div>
+        </div>
+        <div class="content">
+            <div class="quote-section fade-in-element">
+                <p>"Frase inspiradora sobre el amor"</p>
+            </div>
+            <div class="photo-section fade-in-element fade-in-delay-1">
+                <img src="/images/h2.jpeg" alt="Foto de la pareja" class="photo">
+                <div class="photo-text fade-in-element fade-in-delay-2">
+                    <h1>¡Nos casamos!</h1>
+                    <div class="countdown fade-in-element fade-in-delay-3">
+                        <div class="unit">
+                            <span id="days" class="number"></span>
+                            <span class="label">Días</span>
+                        </div>
+                        <div class="unit">
+                            <span id="hours" class="number"></span>
+                            <span class="label">Horas</span>
+                        </div>
+                        <div class="unit">
+                            <span id="minutes" class="number"></span>
+                            <span class="label">Minutos</span>
+                        </div>
+                        <div class="unit">
+                            <span id="seconds" class="number"></span>
+                            <span class="label">Segundos</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="guest-section fade-in-element">
+                <p>Es un placer invitarlos</p>
+                <p id="guest-name" class="fade-in-delay-1"></p>
+                <p class="fade-in-delay-2">Los esperamos</p>
+            </div>
+            <div class="invitation-info-section fade-in-element fade-in-delay-1">
+                <p>Invitación válida por <span id="passes"></span> pases</p>
+                <p class="fade-in-delay-2">Adultos: <span id="adults"></span></p>
+                <p class="fade-in-delay-3">Niños: <span id="children"></span></p>
+            </div>
+            <div class="blessing-section fade-in-element">
+                <p>Con la bendición de Dios y nuestros padres</p>
+                <p class="fade-in-delay-1">Padres de la novia</p>
+                <p class="fade-in-delay-2">María Gutierrez</p>
+                <p class="fade-in-delay-3">Pedro Sánchez</p>
+                <p class="fade-in-delay-4">Padres del novio</p>
+                <p class="fade-in-delay-1">Laura Rodriguez</p>
+                <p class="fade-in-delay-2">Ricardo Martinez</p>
+            </div>
+            <div class="special-day-section fade-in-element">
+                <p>Compartir este día especial con ustedes lo hace inolvidable</p>
+            </div>
+            <div class="itinerary-section fade-in-element">
+                <h2>Itinerario</h2>
+                <div class="itinerary-item fade-in-element fade-in-delay-1">
+                    <i class="fas fa-church" onclick="location.href='https://maps.app.goo.gl/ceremonia'" title="Ver en Google Maps"></i>
+                    <div>
+                        <p>Ceremonia</p>
+                        <p>3 ave 7-420 zona 1 cda. Guatemala</p>
+                        <p>15:00 hrs</p>
+                    </div>
+                </div>
+                <hr>
+                <div class="itinerary-item fade-in-element fade-in-delay-2">
+                    <i class="fas fa-glass-cheers" onclick="location.href='https://maps.app.goo.gl/recepcion'" title="Ver en Google Maps"></i>
+                    <div>
+                        <p>Recepción</p>
+                        <p>3-45 cda guatemala</p>
+                        <p>18:00 hrs</p>
+                    </div>
+                </div>
+                <hr>
+                <div class="itinerary-item fade-in-element fade-in-delay-3">
+                    <i class="fas fa-utensils" onclick="location.href='https://maps.app.goo.gl/cena'" title="Ver en Google Maps"></i>
+                    <div>
+                        <p>Cena</p>
+                        <p>19:00 hrs</p>
+                    </div>
+                </div>
+                <hr>
+                <div class="itinerary-item fade-in-element fade-in-delay-4">
+                    <i class="fas fa-music" onclick="location.href='https://maps.app.goo.gl/fiesta'" title="Ver en Google Maps"></i>
+                    <div>
+                        <p>Fiesta</p>
+                        <p>20:00 hrs</p>
+                    </div>
+                </div>
+            </div>
+            <div class="locations-section fade-in-element">
+                <h2>Ubicaciones</h2>
+                <div class="location-item fade-in-delay-1">
+                    <i class="fas fa-church"></i>
+                    <p>Iglesia</p>
+                    <p>Amistad de Saltillo</p>
+                    <p>Roman, nueva espana, cahulia</p>
+                    <button onclick="location.href='https://maps.app.goo.gl/iglesia'">CÓMO LLEGAR</button>
+                </div>
+                <div class="location-item fade-in-delay-2">
+                    <i class="fas fa-glass-cheers"></i>
+                    <p>Recepción</p>
+                    <p>Amistad de Saltillo</p>
+                    <p>Roman, nueva espana, cahulia</p>
+                    <button onclick="location.href='https://maps.app.goo.gl/recepcion'">CÓMO LLEGAR</button>
+                </div>
+            </div>
+            <div class="accommodation-section fade-in-element">
+                <h2>Sugerencia de Hospedaje</h2>
+                <div class="carousel">
+                    <button class="carousel-button left" onclick="prevSlide('hotel')">&#10094;</button>
+                    <div class="carousel-content" id="hotel-carousel">
+                        <div class="carousel-item fade-in-element fade-in-delay-1">
+                            <p>Quinta Dorada Hotel</p>
+                            <p>Perif. Luis, Guanajuato, Saltillo.</p>
+                            <button onclick="location.href='https://example.com/hotel1'">VER HOTEL</button>
+                        </div>
+                        <div class="carousel-item fade-in-element fade-in-delay-2">
+                            <p>Hotel Camino Real</p>
+                            <p>Av. Universidad, San Pedro, Saltillo.</p>
+                            <button onclick="location.href='https://example.com/hotel2'">VER HOTEL</button>
+                        </div>
+                        <div class="carousel-item fade-in-element fade-in-delay-3">
+                            <p>Hotel La Fuente</p>
+                            <p>Calle Aldama, Zona Centro, Saltillo.</p>
+                            <button onclick="location.href='https://example.com/hotel3'">VER HOTEL</button>
+                        </div>
+                        <div class="carousel-item fade-in-element fade-in-delay-4">
+                            <p>Hotel American Express</p>
+                            <p>Blvd. V. Carranza, Saltillo.</p>
+                            <button onclick="location.href='https://example.com/hotel4'">VER HOTEL</button>
+                        </div>
+                    </div>
+                    <button class="carousel-button right" onclick="nextSlide('hotel')">&#10095;</button>
+                </div>
+            </div>
+            <div class="story-section fade-in-element">
+                <h2>Nuestra Historia</h2>
+                <div class="carousel">
+                    <button class="carousel-button left" onclick="prevSlide('story')">&#10094;</button>
+                    <div class="carousel-content" id="story-carousel">
+                        <div class="carousel-item flip-card fade-in-delay-1">
+                            <div class="flip-card-inner" onclick="flipCard(this)">
+                                <div class="flip-card-front">
+                                    <img src="/images/v1.jpeg" alt="Nos conocimos">
+                                    <p>Nos conocimos</p>
+                                </div>
+                                <div class="flip-card-back">
+                                    <p>Nuestra primera cita fue en un pequeño café en la ciudad...</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item flip-card fade-in-delay-2">
+                            <div class="flip-card-inner" onclick="flipCard(this)">
+                                <div class="flip-card-front">
+                                    <img src="images/primera_cita.jpg" alt="Nuestra primera cita">
+                                    <p>Nuestra primera cita</p>
+                                </div>
+                                <div class="flip-card-back">
+                                    <p>Fue un día perfecto, paseamos por el parque y cenamos juntos...</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item flip-card fade-in-delay-3">
+                            <div class="flip-card-inner" onclick="flipCard(this)">
+                                <div class="flip-card-front">
+                                    <img src="images/primer_beso.jpg" alt="Nuestro primer beso">
+                                    <p>Nuestro primer beso</p>
+                                </div>
+                                <div class="flip-card-back">
+                                    <p>El momento más mágico, bajo la luz de la luna...</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item flip-card fade-in-delay-4">
+                            <div class="flip-card-inner" onclick="flipCard(this)">
+                                <div class="flip-card-front">
+                                    <img src="images/novios.jpg" alt="Nos hicimos novios">
+                                    <p>Nos hicimos novios</p>
+                                </div>
+                                <div class="flip-card-back">
+                                    <p>Decidimos dar el siguiente paso en nuestra relación...</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item flip-card fade-in-delay-1">
+                            <div class="flip-card-inner" onclick="flipCard(this)">
+                                <div class="flip-card-front">
+                                    <img src="images/compromiso.jpg" alt="Nos comprometimos">
+                                    <p>Nos comprometimos</p>
+                                </div>
+                                <div class="flip-card-back">
+                                    <p>La propuesta fue un momento inolvidable...</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item flip-card fade-in-delay-2">
+                            <div class="flip-card-inner" onclick="flipCard(this)">
+                                <div class="flip-card-front">
+                                    <img src="images/felices.jpg" alt="Felices por siempre">
+                                    <p>Felices por siempre</p>
+                                </div>
+                                <div class="flip-card-back">
+                                    <p>Estamos emocionados por el futuro que nos espera juntos...</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-button right" onclick="nextSlide('story')">&#10095;</button>
+                </div>
+            </div>
+            <div class="gratitude-section fade-in-element">
+                <p>¡Que nos acompañes es lo más importante! Y sí está en tu disposición realizar una muestra de cariño estaremos muy agradecidos.</p>
+            </div>
+            <div class="gifts-section fade-in-element">
+                <h2>Obsequios</h2>
+                <p>Lista de Regalos</p>
+                <button onclick="location.href='https://www.cemaco.com'">BODAS CEMACO</button>
+                <p>¡Gracias!</p>
+                <p>Por sus muestras de cariño y esperamos verlos en este día tan especial.</p>
+            </div>
+            <div class="dresscode-section fade-in-element">
+                <h2>Dress Code</h2>
+                <div class="icons">
+                    <i class="fas fa-male fade-in-delay-1"></i>
+                    <i class="fas fa-female fade-in-delay-2"></i>
+                </div>
+                <p>Viste elegante y no olvides abrigarte muy bien. Hemos reservado el color blanco, agradecemos que uses otro color y seas parte de nuestro gran día.</p>
+            </div>
+            <div class="filter-section fade-in-element">
+                <h2>Filtro</h2>
+                <i class="fas fa-camera animated-icon fade-in-delay-1"></i>
+                <p>Toma tus historias para Instagram usando nuestros filtros, y no olvides etiquetarnos y usar #noscasamos</p>
+                <button onclick="location.href='https://www.instagram.com/ar/492624986607591/'" class="fade-in-element fade-in-delay-2">TOMA UNA HISTORIA</button>
+            </div>
+            <div class="rsvp-section fade-in-element">
+                <h2>RSVP</h2>
+                <p>Confirma tu asistencia antes del 20 de Julio, gracias por acompañarnos.</p>
+                <button onclick="location.href='https://wa.me/50251783145?text=Gracias%20por%20la%20invitaci%C3%B3n.'">CONFIRMA TU ASISTENCIA</button>
+            </div>
+            <div class="wishes-section fade-in-element">
+                <h2>Buenos deseos</h2>
+                <button onclick="toggleWishes()">VER BUENOS DESEOS</button>
+                <div id="wishes" class="hidden">
+                    <!-- Aquí se mostrarán los buenos deseos -->
+                </div>
+                <button onclick="toggleWishForm()">ENVIAR BUENOS DESEOS</button>
+                <div id="wish-form" class="hidden">
+                    <h3>Enviar Buenos Deseos</h3>
+                    <label for="wish-name">Nombre:</label>
+                    <input type="text" id="wish-name">
+                    <label for="wish-message">Mensaje de buenos deseos:</label>
+                    <textarea id="wish-message"></textarea>
+                    <button onclick="submitWish()">ENVIAR</button>
+                </div>
+            </div>
+            <div class="gallery-section fade-in-element">
+                <h2>Galería de fotos</h2>
+                <div class="gallery-main fade-in-delay-1">
+                    <img id="main-photo" src="/images/h5.jpeg" alt="Foto principal">
+                </div>
+                <div class="gallery-thumbs fade-in-delay-2">
+                    <img src="/images/h1.jpeg" alt="Foto 1" onclick="changePhoto(this)">
+                    <img src="/images/v2.jpeg" alt="Foto 2" onclick="changePhoto(this)">
+                    <img src="/images/h4.jpeg" alt="Foto 3" onclick="changePhoto(this)">
+                    <img src="/images/v3.jpeg" alt="Foto 4" onclick="changePhoto(this)">
+                </div>
+            </div>
+            <div class="playlist-section fade-in-element">
+                <h2>Playlist</h2>
+                <p>Nos encantaría que nos sugieras esas canciones que sabes que son geniales y no pueden faltar en nuestra boda.</p>
+                <button onclick="location.href='https://open.spotify.com/playlist/your-playlist'">AGREGAR CANCIONES</button>
+            </div>
+            <div class="photo-full fade-in-element">
+                <img src="/images/v3.jpeg" alt="Foto de la pareja">
+            </div>
+            <div class="banner-section fade-in-element">
+                <p>Nos encantará que formes parte de esta historia de amor</p>
+            </div>
+            <footer class="fade-in-element">
+                <div class="social-icons">
+                    <a href="https://wa.me/50251783145"><i class="fab fa-whatsapp fade-in-delay-1"></i></a>
+                    <a href="https://www.facebook.com"><i class="fab fa-facebook fade-in-delay-2"></i></a>
+                    <a href="https://www.instagram.com"><i class="fab fa-instagram fade-in-delay-3"></i></a>
+                </div>
+                <div class="logo fade-in-delay-4">
+                    <img src="/images/2.png" alt="Logo de la empresa">
+                </div>
+            </footer>
         </div>
     </div>
-    <!-- Reproductor de música -->
-    <div class="music-player">
-        <audio id="audioPlayer" src="your-song.mp3"></audio>
-        <div class="player-controls">
-            <button id="playPauseButton"><i class="fas fa-play" id="playPauseIcon"></i></button>
-            <span id="currentTime">0:00</span>
-            <input type="range" id="progressBar" value="0">
-            <span id="durationTime">0:00</span>
-            <button id="volumeButton"><i class="fas fa-volume-up" id="volumeIcon"></i></button>
-            <input type="range" id="volumeBar" value="100">
-        </div>
-    </div>
-</div>
-<script src="/script.js" defer></script>
-<script src="https://kit.fontawesome.com/your-kit-code.js" crossorigin="anonymous"></script>
+    <script src="/script.js" defer></script>
 </body>
 </html>
-
