@@ -8,7 +8,7 @@ body {
     justify-content: center;
 }
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Cinzel Decorative', serif;
+    font-family: 'Great Vibes', serif;
     text-transform: uppercase;
     font-weight: 600;
     font-style: normal;
@@ -92,12 +92,13 @@ h1, h2, h3, h4, h5, h6 {
     transform: translate(-50%, -50%);
     color: white;
     text-align: center;
-    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    text-shadow: 0 0 10px rgb(0, 0, 0);
     width: 100%;
 }
 .photo-text h1 {
     font-size: 68px;
     margin-top: -300px;
+    text-transform: capitalize;
 }
 .photo-text h2 {
     font-size: 34px;
@@ -159,10 +160,10 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 44px;
     font-style: italic;
     margin: 0;
-    color: DarkSlateGray;
+    color: black;
 }
 .guest-section{
-    background-color: rgba(246, 228, 238, 0.856);
+    background-color: #b29a68;
     text-align: center;
     padding: 15px 0 15px;
     margin: -5px;
@@ -173,25 +174,25 @@ h1, h2, h3, h4, h5, h6 {
     text-transform: none;
     font-style: italic;
     font-size: 46px;
-    color: DarkSlateGray;
+    color: black;
 }
 .guest-section p{
     font-size: 55px;
     margin: 0;
-    color: DarkSlateGray;
+    color: black;
 }
 .invitation-info-section{
-    background-color: white;
+    background-color:#514732;
     text-align: center;
-    padding: 0;
+    padding: 15PX;
     margin: 0;
 }
 .invitation-info-section p{
-    color: rgb(187, 152, 171);
+    color: white;
     font-size: 56px;
 }
 .blessing-section{
-    background-color: rgba(246, 228, 238, 0.856);
+    background-color: white;
     text-align: center;
     padding: 10px;
 }
@@ -495,28 +496,34 @@ h1, h2, h3, h4, h5, h6 {
     display: flex;
     justify-content: center;
     text-align: center;
-    margin:0;
+    margin: 0;
 }
 
 .unit {
+    width: 70px;
+    height: 70px;
     margin: 0;
-    padding: 5px 5px;
-    background-color: rgba(249, 233, 235, 0.42);
+    padding: 5px 10px;
+    background-color: rgba(178, 155, 104, 0.22);
     border: solid 1px white;
-    border-radius: 1px;
+    border-radius: 5px;
+    text-align: center;
 }
 
 .number {
     font-size: 86px;
     color: white;
     text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+    text-align: center;
 }
 
 .label {
-    font-size: 48px;
+    font-size: 24px;
     color: white;
-    text-shadow: 0 0 10px rgba(0, 0, 0, 0.743);
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+    text-align: center;
 }
+
 
 .wishes-section {
     background-color: #f8f8f8;
@@ -669,27 +676,18 @@ footer .logo img {
         font-size: 26px;
     }
     .photo-text h1 {
-        font-size: 20px;
-        margin-top: -100px;
+        font-size: 60px;
+        margin-top: -270px;
     }
     .photo-text h2 {
-        font-size: 14px;
-        margin-top: -10px;
+        font-size: 30px;
+        margin-top: -50px;
     }
     .quote-section{
         padding: 25px 5px;
     }
-    .quote-section p, .invitation-info-section p, .special-day-section p, .location-item p, .dresscode-section p, .animated-icon, .gratitude-section p, .gifts-section p, .filter-section p, .rsvp-section p {
+    .quote-section p, .guest-section p, .invitation-info-section p, .special-day-section p, .location-item p, .dresscode-section p, .animated-icon, .gratitude-section p, .gifts-section p, .filter-section p, .rsvp-section p {
         font-size: 22px;
-    }
-    .guest-section h2{
-        font-size: 16px;
-        margin: 5px 0 0 0;
-    }
-    .guest-section p{
-        font-size: 25px;
-        font-weight: bold;
-        font-style: normal;
     }
     .blessing-section p{
         font-size: 20px;
@@ -713,14 +711,18 @@ footer .logo img {
         font-size: 24px;
         margin: 8px;
     }
+    .unit {
+        width: 50px;
+        height: 50px;
+        padding: 20px 20px 20px 20px;
+    }
     .number {
         font-size: 20px;
+        margin-bottom: 5px;
     }
-    
     .label {
         font-size: 18px;
     }
-
     .carousel-content {
         width: 90%;
     }

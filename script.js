@@ -48,27 +48,36 @@ document.addEventListener('scroll', () => {
 });
 
 // Función para iniciar el contador
-function initializeCountdown(targetDate) {
+document.addEventListener('DOMContentLoaded', () => {
+    // Define la fecha objetivo
+    const targetDate = new Date('2024-11-23T00:00:00').getTime();
+
+    // Actualiza el contador cada segundo
     const countdown = setInterval(() => {
         const now = new Date().getTime();
         const distance = targetDate - now;
 
+        // Calcula los días, horas, minutos y segundos restantes
         const days = Math.floor(distance / (1000 * 60 * 60 * 24));
         const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
         const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
         const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-        document.getElementById('days').textContent = days;
-        document.getElementById('hours').textContent = hours;
-        document.getElementById('minutes').textContent = minutes;
-        document.getElementById('seconds').textContent = seconds;
+        // Actualiza los elementos del contador
+        document.getElementById('days').textContent = days < 10 ? '0' + days : days;
+        document.getElementById('hours').textContent = hours < 10 ? '0' + hours : hours;
+        document.getElementById('minutes').textContent = minutes < 10 ? '0' + minutes : minutes;
+        document.getElementById('seconds').textContent = seconds < 10 ? '0' + seconds : seconds;
 
+        // Si el contador ha terminado, detén la cuenta regresiva
         if (distance < 0) {
             clearInterval(countdown);
             document.querySelector('.countdown').textContent = "¡La boda ya ocurrió!";
         }
     }, 1000);
-}
+});
+
+
 
 // Función para mostrar la información del invitado
 function displayGuestInfo(index) {
