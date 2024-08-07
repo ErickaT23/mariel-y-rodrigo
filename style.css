@@ -1,19 +1,18 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Cormorant 'Cormorant Garamond', serif', serif;
     font-style: oblique;
-    background-color: rgba(249, 233, 235, 0.631);
+    background-color: white;
     overflow-x: hidden;
+    justify-content: center;
 }
-
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Cinzel Decorative', serif;
     text-transform: uppercase;
     font-weight: 600;
     font-style: normal;
 }
-
 #envelope {
     position: fixed;
     top: 0;
@@ -23,7 +22,6 @@ h1, h2, h3, h4, h5, h6 {
     perspective: 1000px;
     z-index: 10;
 }
-
 #envelope-top, #envelope-bottom {
     position: absolute;
     width: 100%;
@@ -33,24 +31,17 @@ h1, h2, h3, h4, h5, h6 {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     transition: transform 1s ease-in-out, opacity 1s ease-in-out;
 }
-
 #envelope-top {
     top: 0;
     border-bottom: none;
-    /*background-image: url(/images/6.png);
-    background-size: cover;*/
     background-image: linear-gradient(-225deg, #F0F8FF 0%, #ffe4e1 100%);
 
 }
-
 #envelope-bottom {
     bottom: 0;
     border-top: none;
-    /*background-image: url(/images/6.png);
-    background-size: cover;*/
     background-image: linear-gradient(-225deg, #FFE4E1 0%, #F0F8FF 100%);
 }
-
 #seal {
     position: absolute;
     top: 50%;
@@ -68,31 +59,32 @@ h1, h2, h3, h4, h5, h6 {
     transition: opacity 1s ease-in-out;
     z-index: 11;
 }
-
 #seal h2 {
     margin: 0;
     font-size: 38px;
     color: white;
     text-shadow: 0 0 10px rgba(0, 0, 0, 0.216);
 }
-
 .hidden {
     display: none;
 }
-
 .photo-section {
     position: relative;
     width: 100%;
-    height: 100vh;
+    height: auto;
     overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-
-.photo-section img {
+.photo-container {
+    width: auto; /* Ajusta este valor para cambiar el tamaño de la imagen */
+    height: auto;
+}
+.photo-container img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: auto;
 }
-
 .photo-text {
     position: absolute;
     top: 50%;
@@ -100,41 +92,59 @@ h1, h2, h3, h4, h5, h6 {
     transform: translate(-50%, -50%);
     color: white;
     text-align: center;
-    text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    width: 100%;
 }
-
 .photo-text h1 {
-    font-size: 48px;
-    margin: 0;
+    font-size: 68px;
+    margin-top: -300px;
 }
-
 .photo-text h2 {
-    font-size: 24px;
-    margin: 10px 0 0;
+    font-size: 34px;
+    margin-top: -30px;
 }
-
 .content {
-    padding: 20px;
+    padding: 0 0 0 0;
     background-color: white;
-    margin-top: 20px;
+    margin: 0 0 0 0;
 }
 .fade-in-element {
     opacity: 0;
     animation: fadeIn 1s forwards;
 }
-
 .fade-in-delay-1 {
     animation-delay: 0.5s;
 }
-
 .fade-in-delay-2 {
     animation-delay: 1s;
 }
-
 .fade-in-delay-3 {
     animation-delay: 1.5s;
 }
-
+.fade-in-delay-4 {
+    animation-delay: 2s;
+}
+.fade-in-delay-5 {
+    animation-delay: 2.5s;
+}
+.fade-in-delay-6 {
+    animation-delay: 3s;
+}
+.fade-in-delay-7 {
+    animation-delay: 3.5s;
+}
+.fade-in-delay-8 {
+    animation-delay: 4s;
+}
+.fade-in-delay-9 {
+    animation-delay: 4.5s;
+}
+.fade-in-delay-10 {
+    animation-delay: 5s;
+}
+.fade-in-delay-11 {
+    animation-delay: 5.5s;
+}
 @keyframes fadeIn {
     to {
         opacity: 1;
@@ -143,66 +153,121 @@ h1, h2, h3, h4, h5, h6 {
 .quote-section {
     background-color: white;
     text-align: center;
-    padding: 40px 0;
+    padding: 60px;
 }
-
 .quote-section p {
-    font-size: 24px;
+    font-size: 44px;
     font-style: italic;
     margin: 0;
-    color: #333;
+    color: DarkSlateGray;
 }
+.guest-section{
+    background-color: rgba(246, 228, 238, 0.856);
+    text-align: center;
+    padding: 15px 0 15px;
+    margin: -5px;
+}
+.guest-section h2{
+    font-weight: 100;
+    font-family: 'Cormorant Garamond', serif, serif;
+    text-transform: none;
+    font-style: italic;
+    font-size: 46px;
+    color: DarkSlateGray;
+}
+.guest-section p{
+    font-size: 55px;
+    margin: 0;
+    color: DarkSlateGray;
+}
+.invitation-info-section{
+    background-color: white;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+.invitation-info-section p{
+    color: rgb(187, 152, 171);
+    font-size: 56px;
+}
+.blessing-section{
+    background-color: rgba(246, 228, 238, 0.856);
+    text-align: center;
+    padding: 10px;
+}
+.blessing-section h1{
+    font-size: 60px;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: oblique;
+    text-transform: none;
+    font-weight: 500;
+    color: DarkSlateGray;
+}
+.blessing-section h2{
+    font-size: 60px;
+    color: dimgray;
 
-.guest-section, .invitation-info-section, .blessing-section, .special-day-section {
-    background-color: #f8f8f8;
+}
+.blessing-section p{
+    margin: 15px 0;
+    font-size: 50px;
+    color: DarkSlateGray;
+}
+.special-day-section {
+    background-color: rgba(216, 191, 216, 0.612);
     text-align: center;
     padding: 20px 0;
-    margin: 20px 0;
-    border: 1px solid #ccc;
+    margin: 0;
 }
-
-.guest-section p, .invitation-info-section p, .blessing-section p, .special-day-section p {
+.special-day-section p {
     margin: 10px 0;
-    font-size: 18px;
-    color: #333;
-}
+    font-size: 40px;
+    padding: 15px 0 15px 0;
+    color: white;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 
+}
 .itinerary-section {
-    background-color: #f8f8f8;
+    background-color: white;
     padding: 20px;
-    margin: 20px 0;
-    border: 1px solid #ccc;
+    margin: 0;
     text-align: center;
 }
-
 .itinerary-section h2 {
-    font-size: 24px;
-    margin-bottom: 20px;
+    font-size: 70px;
+    margin-bottom: 50px;
+    color: darkslategray;
+    cursor: pointer;
 }
-
+.itinerary-section h2:hover {
+    color: rgb(187, 152, 171);
+}
 .itinerary-item {
     display: flex;
     align-items: center;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
+    justify-content: center;
+    flex-direction: column;
 }
-
 .itinerary-item i {
-    font-size: 24px;
-    margin-right: 10px;
-    cursor: pointer;
-    transition: color 0.3s;
+    font-size: 120px;
+    margin-bottom: 20px;
+    margin-top: 30px;
+    color: darkslategray;
+    transition: color 0.3s, opacity 1s ease-out;
 }
-
 .itinerary-item i:hover {
-    color: #b29a68;
+    color: rgb(187, 152, 171);
 }
-
 .itinerary-item p {
-    margin: 0;
-    font-size: 18px;
-    color: #333;
+    font-size: 40px;
+    color: darkslategray;
+    margin: 10px;
+    cursor: pointer;
 }
-
+.itinerary-item p:hover {
+    color: rgb(187, 152, 171);
+}
 .locations-section {
     background-color: #f8f8f8;
     padding: 20px;
@@ -430,21 +495,27 @@ h1, h2, h3, h4, h5, h6 {
     display: flex;
     justify-content: center;
     text-align: center;
-    margin: 20px 0;
+    margin:0;
 }
 
 .unit {
-    margin: 0 10px;
+    margin: 0;
+    padding: 5px 5px;
+    background-color: rgba(249, 233, 235, 0.42);
+    border: solid 1px white;
+    border-radius: 1px;
 }
 
 .number {
-    font-size: 36px;
-    color: #b29a68;
+    font-size: 86px;
+    color: white;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
 }
 
 .label {
-    font-size: 18px;
-    color: #666;
+    font-size: 48px;
+    color: white;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.743);
 }
 
 .wishes-section {
@@ -590,40 +661,64 @@ footer .logo img {
 
 @media (max-width: 600px) {
     #seal {
-        width: 60px;
-        height: 60px;
+        width: 100px;
+        height: 100px;
     }
 
     #seal h2 {
-        font-size: 16px;
+        font-size: 26px;
     }
-
     .photo-text h1 {
-        font-size: 32px;
+        font-size: 20px;
+        margin-top: -100px;
     }
-
     .photo-text h2 {
-        font-size: 18px;
+        font-size: 14px;
+        margin-top: -10px;
     }
-
-    .quote-section p, .guest-section p, .invitation-info-section p, .blessing-section p, .special-day-section p, .itinerary-item p, .location-item p, .dresscode-section p, .animated-icon, .gratitude-section p, .gifts-section p, .filter-section p, .rsvp-section p {
+    .quote-section{
+        padding: 25px 5px;
+    }
+    .quote-section p, .invitation-info-section p, .special-day-section p, .location-item p, .dresscode-section p, .animated-icon, .gratitude-section p, .gifts-section p, .filter-section p, .rsvp-section p {
+        font-size: 22px;
+    }
+    .guest-section h2{
         font-size: 16px;
+        margin: 5px 0 0 0;
     }
-
-    .itinerary-section h2, .locations-section h2, .accommodation-section h2, .gifts-section h2, .dresscode-section h2, .filter-section h2, .rsvp-section h2 {
+    .guest-section p{
+        font-size: 25px;
+        font-weight: bold;
+        font-style: normal;
+    }
+    .blessing-section p{
         font-size: 20px;
     }
-
-    .itinerary-item i, .location-item i, .dresscode-section i {
-        font-size: 20px;
-    }
-
-    .number {
+    .blessing-section h1{
         font-size: 24px;
     }
-
+    .blessing-section h2{
+        font-size: 18px;
+        font-weight: 600;
+    }
+    .itinerary-section h2, .locations-section h2, .accommodation-section h2, .gifts-section h2, .dresscode-section h2, .filter-section h2, .rsvp-section h2 {
+        font-size: 25px;
+        margin-bottom: 20px;
+    }
+    .itinerary-item i, .location-item i, .dresscode-section i {
+        font-size: 60px;
+        margin-bottom: 8px;
+    }
+    .itinerary-item p{
+        font-size: 24px;
+        margin: 8px;
+    }
+    .number {
+        font-size: 20px;
+    }
+    
     .label {
-        font-size: 14px;
+        font-size: 18px;
     }
 
     .carousel-content {

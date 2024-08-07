@@ -22,21 +22,26 @@
     <!-- Sección de invitación -->
     <div id="invitation" class="hidden">
         <div class="photo-section fade-in-element">
-            <img src="/images/h3.jpeg" alt="Foto de la pareja" class="photo">
-            <div class="photo-text fade-in-element fade-in-delay-1">
+            <div class="photo-container">
+                <img src="/images/h3.jpeg" alt="Foto de la pareja" class="photo">
+            </div>
+                <div class="photo-text fade-in-element fade-in-delay-1">
                 <h1>Mariel & Rodrigo</h1>
                 <h2 class="fade-in-delay-2">23 . 11 . 2024</h2>
             </div>
         </div>
         <div class="content">
             <div class="quote-section fade-in-element">
-                <p>"Frase inspiradora sobre el amor"</p>
+                <p>"Intercambio equivalente, te daré la mitad de mi vida, dame la mitad de la tuya."</p>
+                <p>- Edward Elric</p>
             </div>
             <div class="photo-section fade-in-element fade-in-delay-1">
-                <img src="/images/h2.jpeg" alt="Foto de la pareja" class="photo">
-                <div class="photo-text fade-in-element fade-in-delay-2">
-                    <h1>¡Nos casamos!</h1>
-                    <div class="countdown fade-in-element fade-in-delay-3">
+                <div class="photo-container">
+                    <img src="/images/h2.jpeg" alt="Foto de la pareja" class="photo">
+                </div>
+                      <div class="photo-text fade-in-element fade-in-delay-2">
+                      <h1>¡Nos casamos!</h1>
+                      <div class="countdown fade-in-element fade-in-delay-3">
                         <div class="unit">
                             <span id="days" class="number"></span>
                             <span class="label">Días</span>
@@ -57,57 +62,51 @@
                 </div>
             </div>
             <div class="guest-section fade-in-element">
-                <p>Es un placer invitarlos</p>
-                <p id="guest-name" class="fade-in-delay-1"></p>
-                <p class="fade-in-delay-2">Los esperamos</p>
+                <h2 class="fade-in-element fade-in-delay-4">Es un placer invitarlos</h2>
+                <p id="guest-name" class="fade-in-delay-5"></p>
             </div>
-            <div class="invitation-info-section fade-in-element fade-in-delay-1">
+            <div class="invitation-info-section fade-in-element fade-in-delay-6">
                 <p>Invitación válida por <span id="passes"></span> pases</p>
-                <p class="fade-in-delay-2">Adultos: <span id="adults"></span></p>
-                <p class="fade-in-delay-3">Niños: <span id="children"></span></p>
+                <!--<p class="fade-in-delay-2">Adultos: <span id="adults"></span></p>
+                <p class="fade-in-delay-3">Niños: <span id="children"></span></p>-->
             </div>
-            <div class="blessing-section fade-in-element">
-                <p>Con la bendición de Dios y nuestros padres</p>
-                <p class="fade-in-delay-1">Padres de la novia</p>
-                <p class="fade-in-delay-2">María Gutierrez</p>
-                <p class="fade-in-delay-3">Pedro Sánchez</p>
-                <p class="fade-in-delay-4">Padres del novio</p>
-                <p class="fade-in-delay-1">Laura Rodriguez</p>
-                <p class="fade-in-delay-2">Ricardo Martinez</p>
+            <div class="blessing-section fade-in-element fade-in-delay-7">
+                <p>Con la bendición de Dios y la de nuestros padres</p>
+                <h1 class="fade-in-delay-8">Padres de la novia</h1>
+                <h2 class="fade-in-delay-8">María Gutierrez</h2>
+                <h2 class="fade-in-delay-8">Pedro Sánchez</h2>
+                <h1 class="fade-in-delay-8">Padres del novio</h1>
+                <h2 class="fade-in-delay-8">Laura Rodriguez</h2>
+                <h2 class="fade-in-delay-8">Ricardo Martinez</h2>
             </div>
-            <div class="special-day-section fade-in-element">
-                <p>Compartir este día especial con ustedes lo hace inolvidable</p>
+            <div class="special-day-section fade-in-element fade-in-delay-9">
+                <p>Compartir este día tan especial para nosotros con ustedes, lo hace </p>
             </div>
             <div class="itinerary-section fade-in-element">
-                <h2>Itinerario</h2>
-                <div class="itinerary-item fade-in-element fade-in-delay-1">
-                    <i class="fas fa-church" onclick="location.href='https://maps.app.goo.gl/ceremonia'" title="Ver en Google Maps"></i>
+                <h2 class="fade-in-element fade-in-delay-10">Itinerario</h2>
+                <div class="itinerary-item">
+                    <i class="fas fa-church fade-in-element fade-in-delay-11"></i>
                     <div>
                         <p>Ceremonia</p>
-                        <p>3 ave 7-420 zona 1 cda. Guatemala</p>
-                        <p>15:00 hrs</p>
+                        <p>16:00 hrs</p>
                     </div>
                 </div>
-                <hr>
-                <div class="itinerary-item fade-in-element fade-in-delay-2">
-                    <i class="fas fa-glass-cheers" onclick="location.href='https://maps.app.goo.gl/recepcion'" title="Ver en Google Maps"></i>
+                <div class="itinerary-item">
+                    <i class="fas fa-glass-cheers fade-in-element fade-in-delay-11"></i>
                     <div>
-                        <p>Recepción</p>
-                        <p>3-45 cda guatemala</p>
+                        <p>Celebremos Juntos</p>
                         <p>18:00 hrs</p>
                     </div>
                 </div>
-                <hr>
-                <div class="itinerary-item fade-in-element fade-in-delay-3">
-                    <i class="fas fa-utensils" onclick="location.href='https://maps.app.goo.gl/cena'" title="Ver en Google Maps"></i>
+                <div class="itinerary-item">
+                    <i class="fas fa-utensils fade-in-element fade-in-delay-11"></i>
                     <div>
                         <p>Cena</p>
                         <p>19:00 hrs</p>
                     </div>
                 </div>
-                <hr>
-                <div class="itinerary-item fade-in-element fade-in-delay-4">
-                    <i class="fas fa-music" onclick="location.href='https://maps.app.goo.gl/fiesta'" title="Ver en Google Maps"></i>
+                <div class="itinerary-item">
+                    <i class="fas fa-music fade-in-element fade-in-delay-11"></i>
                     <div>
                         <p>Fiesta</p>
                         <p>20:00 hrs</p>
@@ -119,16 +118,16 @@
                 <div class="location-item fade-in-delay-1">
                     <i class="fas fa-church"></i>
                     <p>Iglesia</p>
-                    <p>Amistad de Saltillo</p>
-                    <p>Roman, nueva espana, cahulia</p>
-                    <button onclick="location.href='https://maps.app.goo.gl/iglesia'">CÓMO LLEGAR</button>
+                    <p>Rectoría Beatas de Belén</p>
+                    <p>14 Calle 9-30, Cdad. de Guatemala</p>
+                    <button onclick="location.href='https://maps.app.goo.gl/rAfTZgt4qwJTzbrA7'">CÓMO LLEGAR</button>
                 </div>
                 <div class="location-item fade-in-delay-2">
                     <i class="fas fa-glass-cheers"></i>
                     <p>Recepción</p>
-                    <p>Amistad de Saltillo</p>
-                    <p>Roman, nueva espana, cahulia</p>
-                    <button onclick="location.href='https://maps.app.goo.gl/recepcion'">CÓMO LLEGAR</button>
+                    <p>Club Guatemala</p>
+                    <p>7a Avenida 12-75 Zona 1, Cdad. de Guatemala</p>
+                    <button onclick="location.href='https://maps.app.goo.gl/tWayNCC1THj3CEdh6'">CÓMO LLEGAR</button>
                 </div>
             </div>
             <div class="accommodation-section fade-in-element">

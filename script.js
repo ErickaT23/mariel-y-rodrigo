@@ -1,6 +1,6 @@
 const guests = [
     {
-        name: "Juan Pérez",
+        name: "Fam. López García",
         passes: 2,
         adults: 2,
         children: 0
@@ -137,3 +137,10 @@ function changePhoto(element) {
 // Iniciar el contador
 const weddingDate = new Date('2024-11-23T00:00:00').getTime();
 initializeCountdown(weddingDate);
+
+
+
+
+
+
+
