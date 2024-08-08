@@ -120,6 +120,20 @@ const weddingDate = new Date('2024-11-23T00:00:00').getTime();
 initializeCountdown(weddingDate);
 
 
+//scroll
+document.addEventListener('scroll', function() {
+    const sections = document.querySelectorAll('.photo-section, .content, .itinerary-section, .locations-section'); 
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    
+    sections.forEach((section, index) => {
+        const speed = 0.5;  // Ajusta este valor para controlar la velocidad del efecto
+        const yPos = scrollTop * speed;
+        
+        // Si estás haciendo scroll hacia abajo, el contenido se moverá hacia atrás
+        section.style.transform = `translateY(${yPos}px)`;
+    });
+});
+
 
 
 
