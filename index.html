@@ -30,6 +30,16 @@
                  <h2 class="fade-in-delay-2">23 . 11 . 2024</h2>
                </div>
           </div>
+          <div class="music-player">
+            <div class="music-info">
+                <button id="play-pause-button"><i id="play-pause-icon" class="fas fa-pause"></i></button>
+                <span id="song-title">Me faltabas tú - Cultura Profética</span>
+            </div>
+            <div class="time-display">
+                <span id="current-time">0:00</span> / <span id="duration-time">0:00</span>
+            </div>
+            <audio id="wedding-song" src="/music/videoplayback.mp4" loop></audio>
+        </div>        
          <div class="content">
             <div class="quote-section fade-in-element">
                 <p>"Intercambio equivalente, te daré la mitad de mi vida, dame la mitad de la tuya."</p>
@@ -41,6 +51,7 @@
                 </div>
                       <div class="photo-text fade-in-element fade-in-delay-2">
                           <h1>¡Nos casamos!</h1>
+                          <p>Te queremos invitar a que formes parte de este día tan especial</p>
                           <div class="countdown fade-in-element fade-in-delay-3">
                               <div class="unit">
                                  <span id="days" class="number">00</span>
@@ -63,28 +74,10 @@
                  </div>
             </div>
                     <div class="guest-section fade-in-element">
-                      <p class="fade-in-element fade-in-delay-4">Es un placer invitarlos</p>
                       <p id="guest-name" class="fade-in-delay-4"></p>
-                      <p class="fade-in-element fade-in-delay-4">los esperamos</p>
                    </div>
             <div class="invitation-info-section fade-in-element fade-in-delay-6">
-                <div class="particles"></div>
                 <p>Invitación válida por <span id="passes"></span> pases <i class="fa-solid fa-ticket"></i> </p>
-                <p class="fade-in-delay-2">Adultos: <span id="adults"></span></p>
-                <p class="fade-in-delay-3">Niños: <span id="children"></span></p>
-            </div>
-            <div class="blessing-section fade-in-element fade-in-delay-7">
-                <p>Con la bendición de Dios y la de nuestros padres</p>
-                <p class="fade-in-delay-8">Padres de la novia</p>
-                <h2 class="fade-in-delay-8">María Gutierrez</h2>
-                <h2 class="fade-in-delay-8">Pedro Sánchez</h2>
-                <p class="fade-in-delay-8">Padres del novio</p>
-                <h2 class="fade-in-delay-8">Laura Rodriguez</h2>
-                <h2 class="fade-in-delay-8">Ricardo Martinez</h2>
-            </div>
-            <div class="special-day-section fade-in-element fade-in-delay-9">
-                <div class="particles"></div>
-                <p>Es un gusto poder compartir con ustedes este día inolvidable.</p>
             </div>
             <div class="itinerary-section fade-in-element">
                 <h2 class="fade-in-element fade-in-delay-11">Itinerario</h2>
@@ -117,52 +110,6 @@
                     </div>
                 </div>
             </div>
-            <div class="locations-section fade-in-element">
-                <h2 class="fade-in-element fade-in-delay-12">Ubicaciones</h2>
-                <div class="location-item fade-in-delay-12">
-                    <h2 class="fade-in-element fade-in-delay-12">Iglesia</h2>
-                    <img src="/images/Beatas-02.jpg" alt="beatas-church" class="fade-in-element fade-in-delay-12">
-                    <p class="fade-in-element fade-in-delay-12">Rectoría Beatas de Belén</p>
-                    <p class="fade-in-element fade-in-delay-12">14 Calle 9-30, Cdad. de Guatemala</p>
-                    <button onclick="location.href='https://maps.app.goo.gl/rAfTZgt4qwJTzbrA7'" class="fade-in-element fade-in-delay-12">CÓMO LLEGAR</button>
-                </div>
-                <div class="location-item fade-in-delay-12">
-                    <h2 class="fade-in-element fade-in-delay-12">Recepción</h2>
-                    <img src="/images/CLUB-GUATEMALA-scaled.jpeg" alt="beatas-church" class="fade-in-element fade-in-delay-12">
-                    <p class="fade-in-element fade-in-delay-12">Club Guatemala</p>
-                    <p class="fade-in-element fade-in-delay-12">7a Avenida 12-75 Zona 1, Cdad. de Guatemala</p>
-                    <button onclick="location.href='https://maps.app.goo.gl/tWayNCC1THj3CEdh6'" class="fade-in-element fade-in-delay-12">CÓMO LLEGAR</button>
-                </div>
-            </div>          
-            <!--<div class="accommodation-section fade-in-element">
-                <h2>Sugerencia de Hospedaje</h2>
-                <div class="carousel">
-                    <button class="carousel-button left" onclick="prevSlide('hotel')">&#10094;</button>
-                    <div class="carousel-content" id="hotel-carousel">
-                        <div class="carousel-item fade-in-element fade-in-delay-1">
-                            <p>Quinta Dorada Hotel</p>
-                            <p>Perif. Luis, Guanajuato, Saltillo.</p>
-                            <button onclick="location.href='https://example.com/hotel1'">VER HOTEL</button>
-                        </div>
-                        <div class="carousel-item fade-in-element fade-in-delay-2">
-                            <p>Hotel Camino Real</p>
-                            <p>Av. Universidad, San Pedro, Saltillo.</p>
-                            <button onclick="location.href='https://example.com/hotel2'">VER HOTEL</button>
-                        </div>
-                        <div class="carousel-item fade-in-element fade-in-delay-3">
-                            <p>Hotel La Fuente</p>
-                            <p>Calle Aldama, Zona Centro, Saltillo.</p>
-                            <button onclick="location.href='https://example.com/hotel3'">VER HOTEL</button>
-                        </div>
-                        <div class="carousel-item fade-in-element fade-in-delay-4">
-                            <p>Hotel American Express</p>
-                            <p>Blvd. V. Carranza, Saltillo.</p>
-                            <button onclick="location.href='https://example.com/hotel4'">VER HOTEL</button>
-                        </div>
-                    </div>
-                    <button class="carousel-button right" onclick="nextSlide('hotel')">&#10095;</button>
-                </div>
-            </div>-->
             <div class="story-section fade-in-element">
                 <h2>Nuestra Historia</h2>
                 <div class="carousel">
@@ -338,5 +285,6 @@
     </div>
     <script src="/script.js"></script>
     <script src="/flip.js"></script>
+    <script src="/music.js"></script>
 </body>
 </html>

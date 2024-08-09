@@ -185,30 +185,6 @@ h1, h2, h3, h4, h5, h6 {
     color: white;
     font-size: 56px;
 }
-.blessing-section{
-    background-color: white;
-    text-align: center;
-    padding: 10px;
-}
-.blessing-section h1{
-    font-size: 60px;
-    font-family: 'Cormorant Garamond', serif;
-    font-style: oblique;
-    text-transform: none;
-    font-weight: 500;
-    color: black;
-}
-.blessing-section h2{
-    font-size: 60px;
-    color: black;
-    text-transform: initial;
-}
-.blessing-section p{
-    margin: 15px 0;
-    font-size: 50px;
-    color: black;
-    font-style: oblique;
-}
 .special-day-section {
     background-color: #ccbc96;
     text-align: center;
@@ -542,6 +518,46 @@ footer .logo img {
     width: 70px;
     height: auto;
 }
+
+
+.music-player {
+    text-align: center;
+    background: #d3d3d33d;
+    border-radius: 55px;
+    box-shadow: 0 4px 8px rgb(0 0 0 / 38%); /* Sombra alrededor de la imagen */
+    margin: 20px;
+    padding: 10px;
+}
+
+.music-info {
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+#play-pause-button {
+    font-size: 24px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: black;
+    vertical-align: middle;
+}
+
+#song-title {
+    font-size: 18px;
+    color: black;
+    margin-left: 10px;
+    vertical-align: middle;
+}
+
+.time-display {
+    font-size: 16px;
+    color: black;
+    margin-top: 5px;
+}
+
+
+
 @media (max-width: 600px) {
     #seal {
         width: 100px;
@@ -559,15 +575,19 @@ footer .logo img {
         font-size: 30px;
         margin-top: -50px;
     }
+    .photo-text p{
+        font-size: 26px;
+        margin-top: -25px;
+        font-style: italic;
+        padding: 5px 5px 5px 5px;
+    }
     .quote-section{
         padding: 25px 5px;
     }
-    .quote-section p, .guest-section p, .blessing-section p, .invitation-info-section p, .special-day-section p, .location-item p, .dresscode-section p, .animated-icon, .gratitude-section p, .gifts-section p, .filter-section p, .rsvp-section p, .playlist-section p{
+    .quote-section p, .guest-section p,  p, .invitation-info-section p, .special-day-section p, .location-item p, .dresscode-section p, .animated-icon, .gratitude-section p, .gifts-section p, .filter-section p, .rsvp-section p, .playlist-section p{
         font-size: 22px;
     }
-    .blessing-section h2{
-        font-size: 30px;
-    }
+
     .itinerary-section h2, .locations-section h2, .story-section h2, .gifts-section h2, .dresscode-section h2, .filter-section h2, .rsvp-section h2, .wishes-section h2, .playlist-section h2{
         font-size: 45px;
         margin-bottom: 10px;
@@ -583,8 +603,9 @@ footer .logo img {
     }
     .unit {
         width: 65px;
-        height: 45px;
-        padding: 10px 10px 10px 10px;
+        height: 65px;
+        padding: 15px 10px 1px 10px;
+        border-radius: 100px;
     }
     .number {
         font-size: 20px;
@@ -606,14 +627,4 @@ footer .logo img {
         width: 80px;
         height: 80px;
     }
-}
-
-.photo-section, 
-.content, 
-.itinerary-section, 
-.locations-section, 
-.story-section, 
-.filter-section {
-    will-change: transform;
-    transition: transform 0.3s ease-out;
 }
