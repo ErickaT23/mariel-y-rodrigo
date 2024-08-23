@@ -25,25 +25,34 @@
           <div class="photo-section fade-in-element">
              <div class="photo-container">
                  <img src="/images/v1.jpeg" alt="Foto de la pareja" class="photo fade-in-element fade-in-delay-1">
-                 <div class="fade-gradient fade-in-element fade-in-delay-1"></div> <!-- Gradiente para la primera imagen -->
-                 <div class="fade-gradient fade-in-element fade-in-delay-1"></div> <!-- Gradiente para la primera imagen -->
              </div>
                 <div class="photo-text fade-in-element fade-in-delay-1">
                  <h1>Mariel & Rodrigo</h1>
                  <h2 class="fade-in-delay-2">23 . 11 . 2024</h2>
                </div>
           </div> 
-          <div class="contenedor-play">
-            <h2 class="texto-play fade-in-element fade-in-delay-2">Nuestra canción</h2>
+          <!--<div class="contenedor-play">
+            <h2 class="texto-play fade-in-element fade-in-delay-2">Me faltabas tú - Cultura Profética</h2>
             <div id="playPauseButton" class="icono-contenedor fade-in-element fade-in-delay-2">
                 <i id="iconoPlayPause" class="fas fa-play" aria-hidden="true"></i>
             </div>
-            <audio id="audioPlayer"  src="/music/videoplayback.mp4"></audio>
-        </div>    
+            <audio id="audioPlayer" src="/music/videoplayback.mp4"></audio>
+        </div>-->
+        <div class="contenedor-play">
+            <h2 class="texto-play fade-in-element fade-in-delay-2">Me faltabas tú - Cultura Profética</h2>
+            <div id="playPauseButton" class="icono-contenedor fade-in-element fade-in-delay-2">
+                <i id="iconoPlayPause" class="fas fa-play" aria-hidden="true"></i>
+            </div>
+            <audio id="audioPlayer" src="/music/videoplayback.mp4"></audio>
+            <div class="progress-container">
+                <input id="progress-bar" type="range" value="0" min="0" max="100" step="1">
+                <div class="time-display">
+                    <span id="current-time">0:00</span> / <span id="duration-time">0:00</span>
+                </div>
+            </div>            
+        </div>               
          <div class="content">
             <div class="photo-section fade-in-element fade-in-delay-2">
-                <div class="fade-gradient-1 fade-in-element fade-in-delay-2"></div> <!-- Gradiente para la segunda imagen -->
-                <div class="fade-gradient-1 fade-in-element fade-in-delay-2"></div> <!-- Gradiente para la segunda imagen -->
                 <div class="photo-container">
                     <img src="/images/v3.jpeg" alt="Foto de la pareja" class="photo fade-in-element fade-in-delay-2">
                 </div>
@@ -129,8 +138,12 @@
             </div>   
             <div class="gallery-section fade-in-element fade-in-delay-6">
                 <h2>Galería de fotos</h2>
+                <div id="photo-modal" class="modal">
+                    <span class="close" onclick="closeModal()">&times;</span>
+                    <img class="modal-content" id="main-photo-modal">
+                </div>                
                 <div class="gallery-main fade-in-delay-6">
-                    <img id="main-photo" src="/images/h5.jpeg" alt="Foto principal">
+                    <img id="main-photo" src="/images/h5.jpeg" alt="Foto principal" onclick="changePhoto(this)">
                 </div>
                 <div class="gallery-thumbs fade-in-delay-6">
                     <img src="/images/h5.jpeg" alt="Foto 1" onclick="changePhoto(this)">

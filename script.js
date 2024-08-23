@@ -2,6 +2,9 @@ document.addEventListener("DOMContentLoaded", function() {
     var audio = document.getElementById("audioPlayer");
     var playPauseButton = document.getElementById("playPauseButton");
     var iconoPlayPause = document.getElementById("iconoPlayPause");
+    var progressBar = document.getElementById("progress-bar");
+    var currentTimeDisplay = document.getElementById("current-time");
+    var durationTimeDisplay = document.getElementById("duration-time");
     var seal = document.getElementById("seal");
 
     let currentSlide = 0;
@@ -41,6 +44,7 @@ document.addEventListener("DOMContentLoaded", function() {
         audio.play().then(function() {
             iconoPlayPause.classList.remove("fa-play");
             iconoPlayPause.classList.add("fa-pause");
+            updateProgress(); // Iniciar la actualización del progreso
         }).catch(function(error) {
             console.log('Playback failed: ', error);
             iconoPlayPause.classList.add("fa-play");
@@ -53,20 +57,15 @@ document.addEventListener("DOMContentLoaded", function() {
         openEnvelopeAndPlayMusic();
     });
 
-    // Agregar event listener para el botón de play/pause
-    playPauseButton.addEventListener("click", function() {
-        togglePlayPause();
-    });
-
+    // Función para reproducir/pausar la música y cambiar el icono
     function togglePlayPause() {
         if (audio.paused) {
             audio.play().then(function() {
                 iconoPlayPause.classList.remove("fa-play");
                 iconoPlayPause.classList.add("fa-pause");
+                updateProgress(); // Iniciar la actualización del progreso
             }).catch(function(error) {
                 console.log('Playback failed: ', error);
-                iconoPlayPause.classList.add("fa-play");
-                iconoPlayPause.classList.remove("fa-pause");
             });
         } else {
             audio.pause();
@@ -74,6 +73,37 @@ document.addEventListener("DOMContentLoaded", function() {
             iconoPlayPause.classList.remove("fa-pause");
         }
     }
+
+    // Actualizar el progreso de la barra y el tiempo
+    function updateProgress() {
+        audio.addEventListener("timeupdate", function() {
+            var progress = (audio.currentTime / audio.duration) * 100;
+            progressBar.value = progress;
+
+            // Actualizar el tiempo transcurrido
+            var currentMinutes = Math.floor(audio.currentTime / 60);
+            var currentSeconds = Math.floor(audio.currentTime % 60);
+            currentTimeDisplay.textContent = `${currentMinutes}:${currentSeconds < 10 ? '0' + currentSeconds : currentSeconds}`;
+
+            // Actualizar el tiempo total (duración de la canción)
+            if (!isNaN(audio.duration)) {
+                var durationMinutes = Math.floor(audio.duration / 60);
+                var durationSeconds = Math.floor(audio.duration % 60);
+                durationTimeDisplay.textContent = `${durationMinutes}:${durationSeconds < 10 ? '0' + durationSeconds : durationSeconds}`;
+            }
+        });
+    }
+
+    // Saltar a una parte de la canción cuando se hace clic en la barra de progreso
+    progressBar.addEventListener("input", function() {
+        var newTime = (progressBar.value / 100) * audio.duration;
+        audio.currentTime = newTime;
+    });
+
+    // Escuchar el clic del botón de play/pause
+    playPauseButton.addEventListener("click", function() {
+        togglePlayPause();
+    });
 
     // Inicializar el contador
     const targetDate = new Date('2024-11-23T00:00:00').getTime();
@@ -137,8 +167,71 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 });
 
+//aparicion de textos con scroll
+document.addEventListener("DOMContentLoaded", function() {
+    const elementsToFade = document.querySelectorAll('.fade-in-element');
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.1 });
+
+    elementsToFade.forEach(element => {
+        observer.observe(element);
+    });
+});
+
+//galeria
+function changePhoto(element) {
+    const mainPhotoModal = document.getElementById('main-photo-modal');
+    const mainPhoto = document.getElementById('main-photo');
+
+    // Actualizar la imagen del modal y la imagen principal
+    mainPhotoModal.src = element.src; // Imagen del modal
+    mainPhoto.src = element.src; // Actualizar la imagen principal
+
+    openModal();
+}
+
+function openModal() {
+    const modal = document.getElementById('photo-modal');
+    modal.style.display = 'block';
+}
+
+function closeModal() {
+    const modal = document.getElementById('photo-modal');
+    modal.style.display = 'none';
+}
 
 
+//buenos deseos
+let wishes = [];
 
+function submitWish() {
+    const name = document.getElementById('wish-name').value;
+    const message = document.getElementById('wish-message').value;
 
+    if (name && message) {
+        wishes.push({ name, message });
+        document.getElementById('wish-name').value = '';
+        document.getElementById('wish-message').value = '';
+        toggleWishForm();
+        displayWishes();
+    }
+}
 
+function displayWishes() {
+    const wishesDiv = document.getElementById('wishes');
+    wishesDiv.innerHTML = wishes.map(wish => `<p><strong>${wish.name}:</strong> ${wish.message}</p>`).join('');
+}
+
+function toggleWishForm() {
+    document.getElementById('wish-form').classList.toggle('hidden');
+}
+
+function toggleWishes() {
+    document.getElementById('wishes').classList.toggle('hidden');
+}
