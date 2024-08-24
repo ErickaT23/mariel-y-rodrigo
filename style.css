@@ -1,7 +1,7 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Cormorant 'Cormorant Garamond', serif', serif;
+    font-family: 'Cormorant Garamond', serif;
     font-style: oblique;
     background-color: #ecdac9;
     overflow-x: hidden;
@@ -133,41 +133,9 @@ h1, h2, h3, h4, h5, h6 {
     opacity: 1;
     transform: translateY(0);
 }
-.fade-in-delay-1 {
-    animation-delay: 0.5s;
-}
-.fade-in-delay-2 {
-    animation-delay: 1s;
-}
-.fade-in-delay-3 {
-    animation-delay: 1.5s;
-}
-.fade-in-delay-4 {
-    animation-delay: 2s;
-}
-.fade-in-delay-5 {
-    animation-delay: 2.5s;
-}
-.fade-in-delay-6 {
-    animation-delay: 3s;
-}
-.fade-in-delay-7 {
-    animation-delay: 3.5s;
-}
-.fade-in-delay-8 {
-    animation-delay: 4s;
-}
-.fade-in-delay-9 {
-    animation-delay: 4.5s;
-}
-.fade-in-delay-10 {
-    animation-delay: 5s;
-}
-.fade-in-delay-11 {
-    animation-delay: 5.5s;
-}
-.fade-in-delay-12 {
-    animation-delay: 6s;
+.lord-icon-style {
+    width: 150px;
+    height: 150px;
 }
 @keyframes fadeIn {
     to {
@@ -381,7 +349,6 @@ h1, h2, h3, h4, h5, h6 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 0 5px;
 }
 .number {
     font-size: 86px;
@@ -474,33 +441,34 @@ h1, h2, h3, h4, h5, h6 {
     width: 100%;
     height: auto;
 }
+/* Ocultamos el checkbox de control */
+.hidden-checkbox {
+    display: none;
+}
 
-/* Estilos del modal */
+/* Por defecto, el modal está oculto */
 .modal {
-    display: grid; 
-    position: fixed; 
-    top: 50%; 
-    left: 50%;  
-    transform: translate(-50%, -50%); /* Centrar el modal en la pantalla */
-    width: 390px; /* Tamaño fijo del modal */
-    height: 790px; /* Tamaño fijo del modal */
-    background-color: rgba(230, 198, 171, 0.756); /* Fondo oscuro */
-    z-index: 1000; 
-    padding: 20px; /* Espaciado alrededor de la imagen */
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 390px; 
+    height: 790px; 
+    background-color: rgba(230, 198, 171, 0.756); 
+    z-index: 1000;
+    padding: 20px;
     box-sizing: border-box;
     align-content: center;
     justify-items: center;
 }
 
-/* Imagen dentro del modal */
-.modal-content {
-    max-width: 100%; /* Asegúrate de que la imagen no exceda el tamaño del contenedor */
-    max-height: 100%; /* Limita la altura de la imagen */
-    object-fit: contain; /* Asegura que la imagen mantenga su proporción */
-    margin: auto;
-    display: block;
+/* Mostrar el modal cuando el checkbox está activado */
+.hidden-checkbox:checked + .modal {
+    display: grid;
 }
 
+/* Estilos del botón de cierre */
 .close {
     position: absolute;
     top: 10px;
@@ -510,11 +478,13 @@ h1, h2, h3, h4, h5, h6 {
     cursor: pointer;
 }
 
-.close:hover,
-.close:focus {
-    color: #bbb;
-    text-decoration: none;
-    cursor: pointer;
+/* Estilo para la imagen dentro del modal */
+.modal-content {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    margin: auto;
+    display: block;
 }
 
 .banner-section {
@@ -580,7 +550,7 @@ footer .logo img {
     }
     .countdown {
         text-align: center;
-        margin-left: -200px;
+        margin-left: -190px;
         margin-right: 200px;
     }
     .quote-section{
@@ -588,6 +558,7 @@ footer .logo img {
     }
     .quote-section p, .guest-section p, .invitation-info-section p, .special-day-section p .dresscode-section p, .gifts-section p, .filter-section p, .rsvp-section p, .playlist-section p, .dresscode-section p{
         font-size: 22px;
+        padding: 5px;
     }
     .story-section h2, .gifts-section h2, .dresscode-section h2, .filter-section h2, .rsvp-section h2, .wishes-section h2, .playlist-section h2{
         font-size: 45px;

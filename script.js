@@ -1,10 +1,13 @@
 document.addEventListener("DOMContentLoaded", function() {
+    // Todo el código relacionado con la inicialización
     var audio = document.getElementById("audioPlayer");
     var playPauseButton = document.getElementById("playPauseButton");
     var iconoPlayPause = document.getElementById("iconoPlayPause");
     var progressBar = document.getElementById("progress-bar");
     var currentTimeDisplay = document.getElementById("current-time");
     var durationTimeDisplay = document.getElementById("duration-time");
+    
+    var modal = document.getElementById('photo-modal');
     var seal = document.getElementById("seal");
 
     let currentSlide = 0;
@@ -160,13 +163,6 @@ document.addEventListener("DOMContentLoaded", function() {
         toggleWishes();
     }
 
-    // Función para cambiar la foto principal en la galería
-    function changePhoto(element) {
-        const mainPhoto = document.getElementById('main-photo');
-        mainPhoto.src = element.src;
-    }
-});
-
 //aparicion de textos con scroll
 document.addEventListener("DOMContentLoaded", function() {
     const elementsToFade = document.querySelectorAll('.fade-in-element');
@@ -182,6 +178,13 @@ document.addEventListener("DOMContentLoaded", function() {
     elementsToFade.forEach(element => {
         observer.observe(element);
     });
+});
+
+ // Función para cambiar la foto principal en la galería
+ function changePhoto(element) {
+    const mainPhoto = document.getElementById('main-photo');
+    mainPhoto.src = element.src;
+}
 });
 
 //galeria
@@ -206,7 +209,29 @@ function closeModal() {
     modal.style.display = 'none';
 }
 
+// Añadir el evento de cierre al botón de cerrar (la 'X')
+document.querySelector('.close').addEventListener('click', closeModal);
 
+// También cierra el modal cuando se hace clic fuera de la imagen (en el fondo del modal)
+document.getElementById('photo-modal').addEventListener('click', function(event) {
+    const modal = document.getElementById('photo-modal');
+    if (event.target === this) {
+        closeModal();
+    }
+});
+
+// Asegúrate de que el evento del sello no interactúe con el modal
+document.getElementById('seal').addEventListener('click', function(event) {
+    // Aquí puedes añadir el comportamiento del sello, pero no debe abrir el modal
+    event.stopPropagation(); // Esto evita que el evento de clic afecte al modal.
+    openEnvelopeAndPlayMusic();
+});
+
+// Evitar que se propague el evento en el modal
+document.getElementById('photo-modal').addEventListener('click', function(event) {
+    event.stopPropagation(); // Esto evita que el clic fuera del modal lo cierre automáticamente
+    closeModal(); // Solo cierra si haces clic en el fondo del modal
+});
 //buenos deseos
 let wishes = [];
 
@@ -235,3 +260,25 @@ function toggleWishForm() {
 function toggleWishes() {
     document.getElementById('wishes').classList.toggle('hidden');
 }
+
+//fade-in-element
+document.addEventListener("DOMContentLoaded", function() {
+    const elementsToFade = document.querySelectorAll('.fade-in-element');
+
+    elementsToFade.forEach((element, index) => {
+        const delay = index * 0.05; // Calcula el retraso basándote en el índice (0.5 segundos por elemento)
+        element.style.transitionDelay = `${delay}s`; // Aplica el retraso dinámico a cada elemento
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.1 });
+
+    elementsToFade.forEach(element => {
+        observer.observe(element);
+    });
+});

@@ -3,7 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Invitación de Boda</title>
+    <title>Mariel & Rodrigo se casan</title>
+    <meta name="description" content="Llego el momento de unir nuestro amor por siempre">
+    <meta property="og:url" content="https://marielyrodrigo.netlify.app/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Nos Casamos Mariel & Rodrigo">
+    <meta property="og:image" content="https://marielyrodrigo.netlify.app/images/v1.jpeg">
     <link rel="stylesheet" href="/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,7 +20,7 @@
     <!-- Sección de sobre -->
     <div id="envelope">
         <div id="envelope-top"></div>
-        <div id="seal" onclick="openEnvelope()">
+        <div id="seal" onclick="openEnvelopeAndPlayMusic()">
             <h2 class="fade-in-element">M | R</h2>
         </div>
         <div id="envelope-bottom"></div>
@@ -24,23 +29,16 @@
     <div id="invitation" class="hidden">
           <div class="photo-section fade-in-element">
              <div class="photo-container">
-                 <img src="/images/v1.jpeg" alt="Foto de la pareja" class="photo fade-in-element fade-in-delay-1">
+                 <img src="/images/v1.jpeg" alt="Foto de la pareja" class="photo fade-in-element fade-in-element">
              </div>
-                <div class="photo-text fade-in-element fade-in-delay-1">
+                <div class="photo-text fade-in-element fade-in-element">
                  <h1>Mariel & Rodrigo</h1>
-                 <h2 class="fade-in-delay-2">23 . 11 . 2024</h2>
+                 <h2 class="fade-in-element">23 . 11 . 2024</h2>
                </div>
           </div> 
-          <!--<div class="contenedor-play">
-            <h2 class="texto-play fade-in-element fade-in-delay-2">Me faltabas tú - Cultura Profética</h2>
-            <div id="playPauseButton" class="icono-contenedor fade-in-element fade-in-delay-2">
-                <i id="iconoPlayPause" class="fas fa-play" aria-hidden="true"></i>
-            </div>
-            <audio id="audioPlayer" src="/music/videoplayback.mp4"></audio>
-        </div>-->
         <div class="contenedor-play">
-            <h2 class="texto-play fade-in-element fade-in-delay-2">Me faltabas tú - Cultura Profética</h2>
-            <div id="playPauseButton" class="icono-contenedor fade-in-element fade-in-delay-2">
+            <h2 class="texto-play fade-in-element fade-in-element">Me faltabas tú - Cultura Profética</h2>
+            <div id="playPauseButton" class="icono-contenedor fade-in-element fade-in-element">
                 <i id="iconoPlayPause" class="fas fa-play" aria-hidden="true"></i>
             </div>
             <audio id="audioPlayer" src="/music/videoplayback.mp4"></audio>
@@ -52,14 +50,14 @@
             </div>            
         </div>               
          <div class="content">
-            <div class="photo-section fade-in-element fade-in-delay-2">
+            <div class="photo-section fade-in-element fade-in-element">
                 <div class="photo-container">
-                    <img src="/images/v3.jpeg" alt="Foto de la pareja" class="photo fade-in-element fade-in-delay-2">
+                    <img src="/images/v3.jpeg" alt="Foto de la pareja" class="photo fade-in-element fade-in-element">
                 </div>
-                      <div class="photo-text fade-in-element fade-in-delay-3">
+                      <div class="photo-text fade-in-element fade-in-element">
                           <h1>¡Nos casamos!</h1>
                           <p>Te queremos invitar a que formes parte de este día tan especial</p>
-                          <div class="countdown fade-in-element fade-in-delay-3">
+                          <div class="countdown fade-in-element fade-in-element">
                               <div class="unit">
                                  <span id="days" class="number">00</span>
                                  <span class="label">Días</span>
@@ -80,15 +78,22 @@
                       </div>
                  </div>
             </div>
-                    <div class="guest-section fade-in-element fade-in-delay-3">
-                      <p id="guest-name" class="fade-in-delay-3"></p>
+                    <div class="guest-section fade-in-element fade-in-element">
+                      <p id="guest-name" class="fade-in-element"></p>
                    </div>
-            <div class="invitation-info-section fade-in-element fade-in-delay-3">
+            <div class="invitation-info-section fade-in-element fade-in-element">
                 <p>Invitación válida por <span id="passes"></span> pases <i class="fa-solid fa-ticket"></i> </p>
             </div>
-            <div class="itinerary-section fade-in-element fade-in-delay-4">
+            <div class="itinerary-section fade-in-element fade-in-element">
                 <div class="itinerary-item">
-                    <lord-icon src="https://cdn.lordicon.com/hingizjn.json" trigger="loop" delay="2000" stroke="light" colors="primary:#000,secondary:#b29a68" style="width:150px;height:150px"></lord-icon>
+                    <lord-icon 
+                     src="https://cdn.lordicon.com/hingizjn.json" 
+                     trigger="loop" 
+                     element="2000" 
+                     stroke="light" 
+                     colors="primary:#000,secondary:#b29a68" 
+                     class="lord-icon-style"
+                     ></lord-icon>
                     <h2>Ceremonia</h2>
                     <p>Rectoría beatas de belén</p>
                     <div class="itinerary-details">
@@ -98,11 +103,17 @@
                             <span class="time">16:00 hrs</span>
                         </div>
                         <p class="location">14 Calle 9-30, Cdad. de Guatemala</p>
-                        <button class="directions-button" onclick="location.href='https://maps.app.goo.gl/dd3DC3b8pCmZ2p366'">CÓMO LLEGAR</button>
+                        <button type="button"  class="directions-button" onclick="location.href='https://maps.app.goo.gl/dd3DC3b8pCmZ2p366'">CÓMO LLEGAR</button>
                     </div>
                 </div>
                 <div class="itinerary-item">
-                    <lord-icon src="https://cdn.lordicon.com/lhzhnixi.json" trigger="loop" stroke="light" colors="primary:#000000,secondary:#b29a68" style="width:150px;height:150px"></lord-icon>
+                    <lord-icon 
+                     src="https://cdn.lordicon.com/lhzhnixi.json" 
+                     trigger="loop" 
+                     stroke="light" 
+                     colors="primary:#000000,secondary:#b29a68" 
+                     class="lord-icon-style"
+                     ></lord-icon>
                     <h2>Recepción</h2>
                     <p>Club Guatemala</p>
                     <div class="itinerary-details">
@@ -116,84 +127,130 @@
                     </div>
                 </div>
             </div>
-            <div class="gifts-section fade-in-element fade-in-delay-4">
+            <div class="gifts-section fade-in-element fade-in-element">
                 <h2>Regalos</h2>
-                <lord-icon src="https://cdn.lordicon.com/ibydboev.json" trigger="loop" stroke="light" colors="primary:#ffffff,secondary:#000" style="width:150px;height:150px"></lord-icon>
+                <lord-icon 
+                 src="https://cdn.lordicon.com/ibydboev.json" 
+                 trigger="loop" 
+                 stroke="light" 
+                 colors="primary:#ffffff,secondary:#000" 
+                 class="lord-icon-style"
+                 ></lord-icon>
                 <p>Lista de Regalos</p>
-                <button onclick="location.href='https://www.cemaco.com/list/bodawolfordandrade'">BODAS CEMACO</button>
-                <p>¡Gracias!</p>
+                <button type="button" onclick="location.href='https://www.cemaco.com/list/bodawolfordarchilaQeJkDy5J9y'">BODAS CEMACO</button>
+                <p>Lo que más queremos es compartir contigo nuestro gran día, pero agradecemos mucho el gesto de un obsequio. ¡Gracias!</p>
             </div>
-            <div class="playlist-section fade-in-element fade-in-delay-5">
+            <div class="playlist-section fade-in-element fade-in-element">
                 <h2>Playlist</h2>
-                <lord-icon src="https://cdn.lordicon.com/vvlnxtgv.json" trigger="loop" stroke="light" colors="primary:#000000,secondary:#b29a68" style="width:150px;height:150px"></lord-icon>
+                <lord-icon 
+                 src="https://cdn.lordicon.com/vvlnxtgv.json" 
+                 trigger="loop" 
+                 stroke="light" 
+                 colors="primary:#000000,secondary:#b29a68" 
+                 class="lord-icon-style"
+                 ></lord-icon>
                 <p>Nos encantaría que nos sugieras esas canciones que sabes que son geniales y no pueden faltar en nuestra boda.</p>
                 <button onclick="location.href='https://open.spotify.com/playlist/your-playlist'">AGREGAR CANCIONES</button>
             </div>
-            <div class="dresscode-section fade-in-element fade-in-delay-5">
+            <div class="dresscode-section fade-in-element fade-in-element">
                 <h2>Dress Code</h2>
                 <div class="icons">
                     <img src="/images/ICONOS.png" alt="icon-dresscode">
                 </div>
-                <p>Viste elegante y no olvides abrigarte muy bien. Hemos reservado el color blanco, agradecemos que uses otro color y seas parte de nuestro gran día.</p>
+                <p>Viste elegante y no olvides abrigarte muy bien. Hemos reservado el color blanco y el beige, agradecemos que uses otro color y seas parte de nuestro gran día.</p>
             </div>   
-            <div class="gallery-section fade-in-element fade-in-delay-6">
+            <div class="gallery-section fade-in-element fade-in-element">
                 <h2>Galería de fotos</h2>
+            
+                <!-- Checkbox oculto que controla la visibilidad del modal -->
+                <input type="checkbox" id="toggle-modal" class="hidden-checkbox">
+            
+                <!-- Modal de fotos -->
                 <div id="photo-modal" class="modal">
-                    <span class="close" onclick="closeModal()">&times;</span>
-                    <img class="modal-content" id="main-photo-modal">
-                </div>                
-                <div class="gallery-main fade-in-delay-6">
-                    <img id="main-photo" src="/images/h5.jpeg" alt="Foto principal" onclick="changePhoto(this)">
+                    <!-- Label para cerrar el modal -->
+                    <label for="toggle-modal" class="close">&times;</label>
+                    <img class="modal-content" id="main-photo-modal" alt="modal">
+                </div> 
+            
+                <!-- Galería principal -->
+                <div class="gallery-main fade-in-element">
+                    <!-- Al hacer clic en la imagen principal, se abre el modal -->
+                    <label for="toggle-modal">
+                        <img id="main-photo" src="/images/h5.jpeg" alt="Foto principal">
+                    </label>
                 </div>
-                <div class="gallery-thumbs fade-in-delay-6">
-                    <img src="/images/h5.jpeg" alt="Foto 1" onclick="changePhoto(this)">
-                    <img src="/images/v2.jpeg" alt="Foto 2" onclick="changePhoto(this)">
-                    <img src="/images/h4.jpeg" alt="Foto 3" onclick="changePhoto(this)">
-                    <img src="/images/v3.jpeg" alt="Foto 4" onclick="changePhoto(this)">
+            
+                <!-- Miniaturas de la galería -->
+                <div class="gallery-thumbs fade-in-element">
+                    <!-- Cada miniatura también actúa como disparador del modal -->
+                    <label for="toggle-modal">
+                        <img src="/images/h5.jpeg" alt="Foto 1" onclick="changePhoto(this)">
+                    </label>
+                    <label for="toggle-modal">
+                        <img src="/images/v2.jpeg" alt="Foto 2" onclick="changePhoto(this)">
+                    </label>
+                    <label for="toggle-modal">
+                        <img src="/images/h4.jpeg" alt="Foto 3" onclick="changePhoto(this)">
+                    </label>
+                    <label for="toggle-modal">
+                        <img src="/images/v3.jpeg" alt="Foto 4" onclick="changePhoto(this)">
+                    </label>
                 </div>
-            </div>    
-            <div class="filter-section fade-in-element fade-in-delay-7">
-                <h2>Filtro</h2>
-                <lord-icon src="https://cdn.lordicon.com/ppwsfvnn.json" trigger="loop" stroke="light" colors="primary:#ffffff,secondary:#000" style="width:150px;height:150px"></lord-icon>
-                <p>Toma tus historias para Instagram usando nuestros filtros, y no olvides etiquetarnos y usar #noscasamos</p>
-                <button onclick="location.href='https://www.instagram.com/ar/492624986607591/'" class="fade-in-element fade-in-delay-2">TOMA UNA HISTORIA</button>
             </div>
-            <div class="wishes-section fade-in-element fade-in-delay-8">
+            <div class="filter-section fade-in-element fade-in-element">
+                <h2>Filtro</h2>
+                <lord-icon 
+                 src="https://cdn.lordicon.com/ppwsfvnn.json" 
+                 trigger="loop" 
+                 stroke="light" 
+                 colors="primary:#ffffff,secondary:#000"
+                 class="lord-icon-style"
+                 ></lord-icon>
+                <p>Toma tus historias para Instagram usando nuestros filtros, y no olvides etiquetarnos y usar #noscasamos</p>
+                <button type="button" onclick="location.href='https://www.instagram.com/ar/251150787453809'" class="fade-in-element fade-in-element">TOMA UNA HISTORIA</button>
+            </div>
+            <div class="wishes-section fade-in-element fade-in-element">
                 <h2>Buenos deseos</h2>
-                <button onclick="toggleWishes()">VER BUENOS DESEOS</button>
+                <button  type="button" onclick="toggleWishes()">VER BUENOS DESEOS</button>
                 <div id="wishes" class="hidden">
                     <!-- Aquí se mostrarán los buenos deseos -->
                 </div>
-                <button onclick="toggleWishForm()">ENVIAR BUENOS DESEOS</button>
+                <button type="button" onclick="toggleWishForm()">ENVIAR BUENOS DESEOS</button>
                 <div id="wish-form" class="hidden">
                     <h3>Enviar Buenos Deseos</h3>
                     <label for="wish-name">Nombre:</label>
                     <input type="text" id="wish-name">
                     <label for="wish-message">Mensaje de buenos deseos:</label>
                     <textarea id="wish-message"></textarea>
-                    <button onclick="submitWish()">ENVIAR</button>
+                    <button type="submit" onclick="submitWish()">ENVIAR</button>
                 </div>
             </div>
-            <div class="rsvp-section fade-in-element fade-in-delay-9">
+            <div class="rsvp-section fade-in-element fade-in-element">
                 <h2>Confirmación</h2>
-                <lord-icon src="https://cdn.lordicon.com/wzwygmng.json" trigger="loop" stroke="light"  colors="primary:#000000,secondary:#b29a68" style="width:150px;height:150px"></lord-icon>
-                <p>Indicanos tu asistencia antes del 20 de Julio, gracias por acompañarnos.</p>
-                <button onclick="location.href='https://wa.me/50251783145?text=Gracias%20por%20la%20invitaci%C3%B3n.'">CONFIRMA TU ASISTENCIA</button>
+                <lord-icon 
+                 src="https://cdn.lordicon.com/wzwygmng.json" 
+                 trigger="loop" 
+                 stroke="light"  
+                 colors="primary:#000000,secondary:#b29a68" 
+                 class="lord-icon-style"
+                 ></lord-icon>
+                <p>Para nosotros es muy importante que confirmes tu asistencia antes del 31 de Octubre, o bien indicarnos sino podrás acompañarnos.</p>
+                <button type="button"  onclick="location.href='https://wa.me/50238645462?text=Gracias%20por%20la%20invitaci%C3%B3n.'">CONFIRMA TU ASISTENCIA</button>
             </div>
-            <div class="photo-full fade-in-element fade-in-delay-10">
+            <div class="photo-full fade-in-element fade-in-element">
                 <img src="/images/v3.jpeg" alt="Foto de la pareja">
             </div>
-            <div class="banner-section fade-in-element fade-in-delay-11">
+            <div class="banner-section fade-in-element fade-in-element1">
                 <p>"Intercambio equivalente, te daré la mitad de mi vida, dame la mitad de la tuya."</p>
                 <p>Edward Elric</p>
             </div>
-            <footer class="fade-in-element fade-in-delay-12">
+            <footer class="fade-in-element fade-in-element">
                 <div class="social-icons">
-                    <a href="https://wa.me/50251783145"><i class="fab fa-whatsapp fade-in-delay-1"></i></a>
-                    <a href="https://www.facebook.com"><i class="fab fa-facebook fade-in-delay-2"></i></a>
-                    <a href="https://www.instagram.com"><i class="fab fa-instagram fade-in-delay-3"></i></a>
+                    <a href="https://wa.me/50251783145" aria-label="Whatsapp"><i class="fab fa-whatsapp fade-in-element"></i></a>
+                    <a href="https://www.facebook.com" aria-label="Facebook"><i class="fab fa-facebook fade-in-element"></i></a>
+                    <a href="https://www.instagram.com" aria-label="Instagram"><i class="fab fa-instagram fade-in-element"></i></a>
                 </div>
-                <div class="logo fade-in-delay-12">
+                <div class="logo fade-in-element">
                     <img src="/images/2.png" alt="Logo de la empresa">
                 </div>
             </footer>
