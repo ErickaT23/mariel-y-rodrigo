@@ -126,7 +126,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
         if (distance < 0) {
             clearInterval(countdown);
-            document.querySelector('.countdown').textContent = "¡La boda ya ocurrió!";
+            document.querySelector('.countdown').textContent = "Gracias por habernos acompañado en este día tan especial.";
         }
     }, 1000);
 

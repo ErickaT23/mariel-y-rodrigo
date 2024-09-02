@@ -519,7 +519,7 @@ footer .logo img {
     width: 70px;
     height: auto;
 }
-@media (max-width: 600px) {
+@media (max-width: 768px) {
     #seal {
         width: 100px;
         height: 100px;
