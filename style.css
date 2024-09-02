@@ -6,12 +6,22 @@ body {
     background-color: #ecdac9;
     overflow-x: hidden;
     justify-content: center;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    min-height: 100vh;
 }
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Great Vibes', serif;
     text-transform: uppercase;
     font-weight: 600;
     font-style: normal;
+}
+.main-content {
+    max-width: 1200px; /* Ancho máximo para pantallas grandes */
+    margin: 0 auto; /* Centra el contenido horizontalmente */
+    padding: 0; /* Espacio interior para evitar que el contenido toque los bordes */
+    box-sizing: border-box; /* Incluye padding y borde en el tamaño total */
 }
 #envelope {
     position: fixed;
@@ -195,7 +205,7 @@ h1, h2, h3, h4, h5, h6 {
     border-radius: 10px;
 }
 .contenedor-play h2{
-    font-size: 30px;
+    font-size: 25px;
     margin-bottom: 5px;
     color: #b29a68;
     text-transform: initial;
@@ -211,7 +221,6 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 5px;
     color: #b29a68;
 }
-
 .contenedor-play .fa-play, .contenedor-play .fa-pause {
     font-size: 35px;
     color: #b29a68;
@@ -231,7 +240,6 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 14px;
     color: #000;
 }
-
 .itinerary-section {
     background-color: white;
     padding: 20px;
@@ -445,7 +453,6 @@ h1, h2, h3, h4, h5, h6 {
 .hidden-checkbox {
     display: none;
 }
-
 /* Por defecto, el modal está oculto */
 .modal {
     display: none;
@@ -462,12 +469,10 @@ h1, h2, h3, h4, h5, h6 {
     align-content: center;
     justify-items: center;
 }
-
 /* Mostrar el modal cuando el checkbox está activado */
 .hidden-checkbox:checked + .modal {
     display: grid;
 }
-
 /* Estilos del botón de cierre */
 .close {
     position: absolute;
@@ -477,7 +482,6 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 35px;
     cursor: pointer;
 }
-
 /* Estilo para la imagen dentro del modal */
 .modal-content {
     max-width: 100%;
@@ -486,7 +490,6 @@ h1, h2, h3, h4, h5, h6 {
     margin: auto;
     display: block;
 }
-
 .banner-section {
     background-color: #ecdac9;
     color: white;
@@ -519,7 +522,23 @@ footer .logo img {
     width: 70px;
     height: auto;
 }
+.texto-play, .icono-contenedor {
+    position: relative;
+    z-index: 2; /* Asegúrate de que los contenidos estén encima del gradiente */
+}
+.icono-contenedor .fas {
+    font-size: 35px;
+    margin-top: 10px;
+}
 @media (max-width: 768px) {
+    .main-content {
+        padding: 0;
+        max-width: 100%; /* Asegura que ocupe todo el ancho disponible en móviles */
+    }
+    body {
+        margin: 0;
+        padding: 0;
+    }
     #seal {
         width: 100px;
         height: 100px;
@@ -529,29 +548,30 @@ footer .logo img {
         font-size: 32px;
     }
     .photo-text h1 {
-        font-size: 55px;
-        margin-top: -230px;
-        margin-left: -200px;
-        margin-right: 200px;
+        font-size: 45px;
+        margin-top: -210px;
+        margin-left: -180px;
+        margin-right: 180px;
     }
     .photo-text h2 {
         font-size: 30px;
-        margin-top: -50px;
-        margin-left: -200px;
-        margin-right: 200px;
+        margin-top: -45px;
+        margin-left: -180px;
+        margin-right: 180px;
     }
     .photo-text p{
-        font-size: 26px;
+        font-size: 25px;
         margin-top: -25px;
         font-style: italic;
         padding: 0 30px;
-        margin-left: -200px;
-        margin-right: 200px;
+        margin-left: -180px;
+        margin-right: 180px;
     }
     .countdown {
         text-align: center;
-        margin-left: -190px;
-        margin-right: 200px;
+        align-items: center;
+        margin-left: -355px;
+        margin-right: auto;
     }
     .quote-section{
         padding: 25px 5px;
@@ -606,7 +626,7 @@ footer .logo img {
     }
 
     .gallery-main img {
-        width: 380px;
+        width: 350px;
         height: 450px;
     }
 
@@ -614,14 +634,82 @@ footer .logo img {
         width: 80px;
         height: 80px;
     }
+    .contenedor-play h2{
+        font-size: 25px;
+    }
 }
+@media (min-width: 768px) and (max-width: 1400px) {
+    .main-content {
+        padding: 0;
+        max-width: 100%; /* Ajusta el ancho para tablets */
+    }
+    body {
+        padding: 0;
+        overflow-x: hidden; /* Asegúrate de que no haya desbordamiento horizontal */
+    }
 
-.texto-play, .icono-contenedor {
-    position: relative;
-    z-index: 2; /* Asegúrate de que los contenidos estén encima del gradiente */
-}
+    .contenedor-play {
+        height: 400px;
+    }
 
-.icono-contenedor .fas {
-    font-size: 35px;
-    margin-top: 10px;
+    .photo-text h1 {
+        font-size: 95px;
+        margin-top: -430px;
+        margin-left: -680px;
+        margin-right: 0;
+    }
+
+    .photo-text h2 {
+        font-size: 60px;
+        margin-top: -80px;
+        margin-left: -460px;
+    }
+
+    .photo-text p {
+        font-size: 45px; /* Ajusta el tamaño del texto del párrafo */
+        margin-left: -330px;
+        margin-right: 330px;
+    }
+
+    .gallery-main img {
+        width: 300px; /* Ajusta el tamaño de las imágenes principales en la galería */
+        height: 300px;
+    }
+
+    .gallery-thumbs img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .countdown {
+        margin-left: 0; /* Centra el countdown en pantallas medianas */
+        margin-right: 0;
+    }
+
+    .unit {
+        width: 105px;
+        height: 105px;
+        padding: 10px;
+    }
+
+    .number {
+        font-size: 30px;
+    }
+
+    .label {
+        font-size: 16px;
+    }
+
+    .itinerary-item i {
+        font-size: 80px;
+    }
+
+    .itinerary-item h2 {
+        font-size: 35px;
+    }
+
+    .directions-button {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
 }
