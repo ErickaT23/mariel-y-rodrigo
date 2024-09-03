@@ -18,7 +18,7 @@ h1, h2, h3, h4, h5, h6 {
     font-style: normal;
 }
 .main-content {
-    max-width: 1200px; /* Ancho máximo para pantallas grandes */
+    max-width: 1800px; /* Ancho máximo para pantallas grandes */
     margin: 0 auto; /* Centra el contenido horizontalmente */
     padding: 0; /* Espacio interior para evitar que el contenido toque los bordes */
     box-sizing: border-box; /* Incluye padding y borde en el tamaño total */
@@ -107,13 +107,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 /* Estilo para los encabezados y párrafos */
 .photo-text h1 {
-    font-size: 68px;
-    margin: 0 0 20px 0;
+    font-size: 100px;
     text-transform: capitalize;
+    margin-top: -400px;
 }
 .photo-text h2 {
-    font-size: 34px;
-    margin: 0 0 10px 0;
+    font-size: 70px;
+    margin-top: -100px;
 }
 .photo-text p {
     font-size: 25px;
@@ -635,12 +635,28 @@ footer .logo img {
         padding: 0;
         max-width: 100%; /* Ajusta el ancho para tablets */
     }
-    body {
-        padding: 0;
-        overflow-x: hidden; /* Asegúrate de que no haya desbordamiento horizontal */
+    .contenedor-play h2 {
+        font-size: 55px;
+    }
+    .time-display {
+        font-size: 45px;
+    }
+    .photo-text h1 {
+        margin-top: -600px;
+        font-size: 135px;
+    }
+
+    .photo-text h2 {
+        margin-top: -50px;
+        font-size: 80px;
+    }
+
+    .photo-text p {
+        font-size: 60px;
+        padding: 10px;
     }
     .contenedor-play {
-        height: 400px;
+        height: 600px;
     }
     .gallery-main img {
         width: 300px; /* Ajusta el tamaño de las imágenes principales en la galería */
@@ -657,29 +673,67 @@ footer .logo img {
     }
 
     .unit {
-        width: 105px;
-        height: 105px;
+        width: 205px;
+        height: 205px;
         padding: 10px;
+        border-radius: 100%;
     }
 
     .number {
-        font-size: 30px;
+        font-size: 90px;
     }
 
     .label {
-        font-size: 16px;
+        font-size: 50px;
     }
 
     .itinerary-item i {
         font-size: 80px;
     }
-
-    .itinerary-item h2 {
+    .lord-icon-style {
+        width: 300px;
+        height: 300px;
+    }
+    .itinerary-item h2, .gifts-section h2, .playlist-section h2, .dresscode-section h2, .gallery-section h2, .filter-section h2, .wishes-section h2, .rsvp-section h2 {
+        font-size: 85px;
+    }
+    .itinerary-item p, .gifts-section p, .filter-section p, .playlist-section p, .dresscode-section p, .rsvp-section p{
+        font-size: 55px;
+        margin: 10px;
+        padding: 5px;
+    }
+    .time-location .date{
+        font-size: 65px;
+    }
+    .time-location .time{
+        font-size: 65px;
+    }
+    .directions-button {
+        font-size: 30px;
+        padding: 10px 20px;
+    }
+    .gifts-section button, .playlist-section button, .filter-section button, .rsvp-section button, .wishes-section button{
+        font-size: 30px;
+        padding: 10px 20px;
+    }
+    #wish-form h3{
+        font-size: 55px;
+    }
+    #wish-form label{
         font-size: 35px;
     }
-
-    .directions-button {
-        font-size: 14px;
-        padding: 8px 16px;
+    #wish-form input, #wish-form textarea {
+        width: 95%;
+        font-size: 35px;
+    }
+    .banner-section {
+        font-size: 55px;
+    }
+    footer .social-icons i{
+        font-size: 55px;
+    }
+    footer .logo img{
+        width: 120px;
+        height: auto;
     }
 }
