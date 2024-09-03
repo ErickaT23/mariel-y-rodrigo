@@ -75,51 +75,61 @@ h1, h2, h3, h4, h5, h6 {
 .hidden {
     display: none;
 }
+/* Contenedor principal */
 .photo-section {
-    position: relative;
-    width: 100%;
-    height: auto;
-    overflow: hidden;
+    position: relative; /* Permite que .photo-text se posicione sobre la imagen */
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 100vh; /* Asegura que la sección ocupe toda la altura de la pantalla */
+    text-align: center;
+    box-sizing: border-box;
+    overflow: hidden; /* Evita que el contenido se desborde */
 }
+/* Contenedor de la imagen */
 .photo-container {
-    width: auto; /* Ajusta este valor para cambiar el tamaño de la imagen */
-    height: auto;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
 }
 .photo-container img {
     width: 100%;
-    height: auto;
+    height: 100%;
+    object-fit: cover; /* Asegura que la imagen cubra completamente el contenedor */
 }
+/* Contenedor del texto, posicionado sobre la imagen */
 .photo-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    position: absolute; /* Posiciona el texto sobre la imagen */
+    max-width: 100%;
     color: white;
-    text-align: center;
     text-shadow: 0 0 10px rgb(0, 0, 0);
-    width: 100%;
+    z-index: 10; /* Asegura que el texto esté por encima de otros elementos */
 }
+/* Estilo para los encabezados y párrafos */
 .photo-text h1 {
     font-size: 68px;
-    margin-top: -300px;
+    margin: 0 0 20px 0;
     text-transform: capitalize;
 }
 .photo-text h2 {
     font-size: 34px;
-    margin-top: -30px;
+    margin: 0 0 10px 0;
+}
+.photo-text p {
+    font-size: 25px;
+    margin: 10px 0;
+    font-style: italic;
+}
+/* Estilo para la cuenta regresiva */
+.countdown {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0 0 0;
 }
 .content {
     padding: 0 0 0 0;
     background-color: white;
     margin: 0 0 0 0;
-}
-.photo-text h1, .photo-text h2, .countdown {
-    text-align: center;
-    margin-left: -200px;
-    margin-right: 200px;
 }
 .unit {
     display: inline-block;
@@ -342,9 +352,7 @@ h1, h2, h3, h4, h5, h6 {
     display: flex;
     justify-content: center;
     text-align: center;
-    margin: 0;
-    margin-left: -230px;
-    margin-right: 200px;
+    margin: 0 auto;
 }
 .unit {
     width: 70px;
@@ -535,50 +543,34 @@ footer .logo img {
         padding: 0;
         max-width: 100%; /* Asegura que ocupe todo el ancho disponible en móviles */
     }
-    body {
-        margin: 0;
-        padding: 0;
-    }
     #seal {
         width: 100px;
         height: 100px;
     }
-
     #seal h2 {
         font-size: 32px;
     }
     .photo-text h1 {
-        font-size: 45px;
-        margin-top: -210px;
-        margin-left: -180px;
-        margin-right: 180px;
+        margin-top: -300px;
+        font-size: 50px;
     }
     .photo-text h2 {
-        font-size: 30px;
-        margin-top: -45px;
-        margin-left: -180px;
-        margin-right: 180px;
+        margin-top: -30px;
+        font-size: 35px;
     }
-    .photo-text p{
+    .photo-text p {
         font-size: 25px;
-        margin-top: -25px;
-        font-style: italic;
-        padding: 0 30px;
-        margin-left: -180px;
-        margin-right: 180px;
+        padding: 10px;
     }
-    .countdown {
-        text-align: center;
-        align-items: center;
-        margin-left: -355px;
-        margin-right: auto;
+    .countdown .unit {
+        margin: 0 5px;
     }
     .quote-section{
         padding: 25px 5px;
     }
     .quote-section p, .guest-section p, .invitation-info-section p, .special-day-section p .dresscode-section p, .gifts-section p, .filter-section p, .rsvp-section p, .playlist-section p, .dresscode-section p{
         font-size: 22px;
-        padding: 5px;
+        padding: 10px;
     }
     .story-section h2, .gifts-section h2, .dresscode-section h2, .filter-section h2, .rsvp-section h2, .wishes-section h2, .playlist-section h2{
         font-size: 45px;
@@ -647,30 +639,9 @@ footer .logo img {
         padding: 0;
         overflow-x: hidden; /* Asegúrate de que no haya desbordamiento horizontal */
     }
-
     .contenedor-play {
         height: 400px;
     }
-
-    .photo-text h1 {
-        font-size: 95px;
-        margin-top: -430px;
-        margin-left: -680px;
-        margin-right: 0;
-    }
-
-    .photo-text h2 {
-        font-size: 60px;
-        margin-top: -80px;
-        margin-left: -460px;
-    }
-
-    .photo-text p {
-        font-size: 45px; /* Ajusta el tamaño del texto del párrafo */
-        margin-left: -330px;
-        margin-right: 330px;
-    }
-
     .gallery-main img {
         width: 300px; /* Ajusta el tamaño de las imágenes principales en la galería */
         height: 300px;
@@ -682,8 +653,7 @@ footer .logo img {
     }
 
     .countdown {
-        margin-left: 0; /* Centra el countdown en pantallas medianas */
-        margin-right: 0;
+        margin: 0 auto;
     }
 
     .unit {
