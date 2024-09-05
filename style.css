@@ -3,7 +3,7 @@ body {
     padding: 0;
     font-family: 'Cormorant Garamond', serif;
     font-style: oblique;
-    background-color: #ecdac9;
+    background-color: #fbedec;
     overflow-x: hidden;
     justify-content: center;
     width: 100%;
@@ -113,7 +113,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 .photo-text h2 {
     font-size: 70px;
-    margin-top: -100px;
+    margin-top: -200px;
 }
 .photo-text p {
     font-size: 25px;
@@ -163,7 +163,7 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 .guest-section{
-    background-color: #f0e3e2;
+    background-color: #fbedec;
     text-align: center;
     padding: 15px 0 15px;
     margin: -5px 0 0 0;
@@ -180,7 +180,7 @@ h1, h2, h3, h4, h5, h6 {
     padding: 15px 0 15px;
 }
 .invitation-info-section p {
-    color: white;
+    color: black;
     font-size: 56px;
 }
 .dresscode-section, .wishes-section, .gallery-section, .playlist-section, .rsvp-section{
@@ -306,19 +306,19 @@ h1, h2, h3, h4, h5, h6 {
 .gifts-section h2, .filter-section h2{
     font-size: 70px;
     margin-bottom: 50px;
-    color: white;
+    color: black;
     text-transform: initial;
 }
 .gifts-section p, .filter-section p{
     font-size: 40px;
-    color: white;
+    color: #987326;
     margin: 10px;
     cursor: pointer;
 }
 .gifts-section button, .rsvp-section button, .playlist-section button, .filter-section button{
     padding: 10px 20px;
     margin-top: 10px;
-    background-color: black;
+    background-color: #b29a68;
     color: white;
     border: none;
     cursor: pointer;
@@ -332,7 +332,7 @@ h1, h2, h3, h4, h5, h6 {
     color: black;
 }
 .gifts-section, .filter-section{
-    background-color: #ecdac9;
+    background-color: #fbedec;
     text-align: center;
     padding: 10px 0 30px;
 }
@@ -470,7 +470,7 @@ h1, h2, h3, h4, h5, h6 {
     transform: translate(-50%, -50%);
     width: 390px; 
     height: 790px; 
-    background-color: rgba(230, 198, 171, 0.756); 
+    background-color: #ffffffa1; 
     z-index: 1000;
     padding: 20px;
     box-sizing: border-box;
@@ -484,10 +484,10 @@ h1, h2, h3, h4, h5, h6 {
 /* Estilos del botón de cierre */
 .close {
     position: absolute;
-    top: 10px;
+    top: 50px;
     right: 20px;
-    color: white;
-    font-size: 35px;
+    color: black;
+    font-size: 85px;
     cursor: pointer;
 }
 /* Estilo para la imagen dentro del modal */
@@ -499,8 +499,8 @@ h1, h2, h3, h4, h5, h6 {
     display: block;
 }
 .banner-section {
-    background-color: #ecdac9;
-    color: white;
+    background-color: #fbedec;
+    color: #987326;
     text-align: center;
     padding: 10px 0;
     margin: -5px 0 0 0;
