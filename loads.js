@@ -94,14 +94,20 @@ document.addEventListener("DOMContentLoaded", function() {
 
     const queryParams = getQueryParams();
     const guestName = queryParams.nombre || "Invitado";
-    const passes = queryParams.pases || 0;
+    const passes = parseInt(queryParams.pases) || 0;
 
-    // Mostrar el nombre del invitado
-    document.getElementById('guest-name').textContent = `¡Hola ${guestName}!`;
+    // Mostrar el nombre del invitado con la condición de 1 pase o más
+    if (passes === 1) {
+        document.getElementById('guest-name').textContent = `¡${guestName}, estás invitado!`;
+    } else if (passes > 1) {
+        document.getElementById('guest-name').textContent = `¡${guestName}, están invitados!`;
+    } else {
+        document.getElementById('guest-name').textContent = `¡${guestName}!`;
+    }
 
-    // Mostrar la cantidad de pases solo si existen
+    // Mostrar la cantidad de pases con "pase" o "pases" dependiendo de la cantidad
     if (passes > 0) {
-        document.getElementById('passes').textContent = `${passes} pase${passes > 1 ? 's' : ''}`;
+        document.getElementById('passes').textContent = `${passes} ${passes === 1 ? 'pase' : 'pases'}`;
     } else {
         // Si no hay pases, oculta la sección
         document.querySelector('.invitation-info-section').style.display = 'none';
