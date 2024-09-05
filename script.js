@@ -10,22 +10,7 @@ document.addEventListener("DOMContentLoaded", function() {
     var modal = document.getElementById('photo-modal');
     var seal = document.getElementById("seal");
 
-    let currentSlide = 0;
-    const guests = [
-        {
-            name: "Fam. López García",
-            passes: 2,
-            adults: 2,
-            children: 0
-        },
-        {
-            name: "Ana López",
-            passes: 3,
-            adults: 2,
-            children: 1
-        }
-    ];
-
+    let currentSlide = 0;   
     const wishes = [];
 
     // Función para abrir el sobre y reproducir la música
@@ -129,18 +114,6 @@ document.addEventListener("DOMContentLoaded", function() {
             document.querySelector('.countdown').textContent = "Gracias por habernos acompañado en este día tan especial.";
         }
     }, 1000);
-
-    // Función para mostrar la información del invitado
-    function displayGuestInfo(index) {
-        const guest = guests[index];
-        document.getElementById('guest-name').textContent = guest.name;
-        document.getElementById('passes').textContent = guest.passes;
-        document.getElementById('adults').textContent = guest.adults;
-        document.getElementById('children').textContent = guest.children;
-    }
-
-    // Inicializar la información del invitado
-    displayGuestInfo(0);
 
     // Funciones para los buenos deseos
     function toggleWishes() {
