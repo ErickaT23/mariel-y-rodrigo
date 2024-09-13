@@ -81,7 +81,7 @@ h1, h2, h3, h4, h5, h6 {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* Asegura que la sección ocupe toda la altura de la pantalla */
+    height: 2000px; /* Asegura que la sección ocupe toda la altura de la pantalla */
     text-align: center;
     box-sizing: border-box;
     overflow: hidden; /* Evita que el contenido se desborde */
@@ -107,17 +107,17 @@ h1, h2, h3, h4, h5, h6 {
 }
 /* Estilo para los encabezados y párrafos */
 .photo-text h1 {
-    font-size: 100px;
+    font-size: 150px;
     text-transform: capitalize;
-    margin-top: -400px;
+    margin-top: -800px;
 }
 .photo-text h2 {
-    font-size: 70px;
-    margin-top: -200px;
+    font-size: 100px;
+    margin-top: -140px;
 }
 .photo-text p {
-    font-size: 25px;
-    margin: 10px 0;
+    font-size: 100px;
+    margin: -100px 0 0 0;
     font-style: italic;
 }
 /* Estilo para la cuenta regresiva */
@@ -135,10 +135,6 @@ h1, h2, h3, h4, h5, h6 {
     display: inline-block;
     text-align: center;
 }
-.number {
-    font-size: 36px;
-    display: block;
-}
 .label {
     font-size: 18px;
     display: block;
@@ -148,14 +144,13 @@ h1, h2, h3, h4, h5, h6 {
     transform: translateY(20px);
     transition: opacity 1s ease-out, transform 1s ease-out;
 }
-
 .fade-in-element.visible {
     opacity: 1;
     transform: translateY(0);
 }
 .lord-icon-style {
-    width: 150px;
-    height: 150px;
+    width: 350px;
+    height: 350px;
 }
 @keyframes fadeIn {
     to {
@@ -181,7 +176,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 .invitation-info-section p {
     color: black;
-    font-size: 56px;
+    font-size: 55px;
 }
 .dresscode-section, .wishes-section, .gallery-section, .playlist-section, .rsvp-section{
     background-color: white;
@@ -190,7 +185,7 @@ h1, h2, h3, h4, h5, h6 {
     text-align: center;
 }
 .story-section h2, .itinerary-item h2, .dresscode-section h2, .filter-section h2, .wishes-section h2, .gallery-section h2, .playlist-section h2, .rsvp-section h2{
-    font-size: 70px;
+    font-size: 110px;
     margin-bottom: 50px;
     color: black;
     text-transform: initial;
@@ -206,19 +201,13 @@ h1, h2, h3, h4, h5, h6 {
     background-position: center; /* Centra la imagen */
     background-repeat: no-repeat; /* Evita que la imagen se repita */
     width: 100%; /* Ocupa todo el ancho disponible */
-    height: 300px; /* Ajusta la altura según sea necesario */
+    height: 900px; /* Ajusta la altura según sea necesario */
     z-index: 2; /* Asegura que esté sobre cualquier contenido debajo */
     padding: 20px; /* Ajusta el espacio interior si es necesario */
     box-sizing: border-box; /* Incluye el padding en el tamaño total */
-    margin-top: -100px;
-    margin-bottom: -60px;
+    margin-top: -150px;
+    margin-bottom: -150px;
     border-radius: 10px;
-}
-.contenedor-play h2{
-    font-size: 25px;
-    margin-bottom: 5px;
-    color: #b29a68;
-    text-transform: initial;
 }
 .contenedor-play .fa-play{
     font-size: 35px;
@@ -227,13 +216,14 @@ h1, h2, h3, h4, h5, h6 {
     color: #b29a68;
 }
 .contenedor-play h2 {
-    font-size: 30px;
+    font-size: 110px;
     margin-bottom: 5px;
-    color: #b29a68;
+    color: #987326;
+    text-transform: initial;
 }
 .contenedor-play .fa-play, .contenedor-play .fa-pause {
-    font-size: 35px;
-    color: #b29a68;
+    font-size: 70px;
+    color: #987326;
     cursor: pointer;
 }
 .progress-container {
@@ -247,8 +237,8 @@ h1, h2, h3, h4, h5, h6 {
     margin: 10px 0;
 }
 .time-display {
-    font-size: 14px;
-    color: #000;
+    font-size: 65px;
+    color:#987326;
 }
 .itinerary-section {
     background-color: white;
@@ -262,17 +252,6 @@ h1, h2, h3, h4, h5, h6 {
     align-items: center;
     margin-bottom: 30px;
 }
-.itinerary-item i {
-    font-size: 120px;
-    margin-bottom: 20px;
-    margin-top: 30px;
-    color: #b29a68;
-    transition: color 0.3s, opacity 1s ease-out;
-    cursor: pointer;
-}
-.itinerary-item i:hover {
-    color: black;
-}
 .itinerary-details {
     text-align: center;
 }
@@ -283,20 +262,20 @@ h1, h2, h3, h4, h5, h6 {
     margin: 10px 0;
 }
 .time-location .date {
-    font-size: 40px;
+    font-size: 80px;
     color: black;
 }
 .time-location .separator {
     margin: 0 10px;
-    font-size: 40px;
+    font-size: 80px;
     color: black;
 }
 .time-location .time {
-    font-size: 40px;
+    font-size: 80px;
     color: black;
 }
 .location {
-    font-size: 24px;
+    font-size: 80px;
     color: black;
     margin: 10px 0;
 }
@@ -304,18 +283,18 @@ h1, h2, h3, h4, h5, h6 {
     background-color: #a08050;
 }
 .gifts-section h2, .filter-section h2{
-    font-size: 70px;
+    font-size: 110px;
     margin-bottom: 50px;
     color: black;
     text-transform: initial;
 }
 .gifts-section p, .filter-section p{
-    font-size: 40px;
+    font-size: 80px;
     color: #987326;
     margin: 10px;
     cursor: pointer;
 }
-.gifts-section button, .rsvp-section button, .playlist-section button, .filter-section button{
+.rsvp-section button, .playlist-section button, .filter-section button{
     padding: 10px 20px;
     margin-top: 10px;
     background-color: #b29a68;
@@ -325,10 +304,11 @@ h1, h2, h3, h4, h5, h6 {
     transition: background-color 0.3s;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8); /* Sombra alrededor de la imagen */
     border-radius: 5px;
+    font-size: 40px;
 }
 .dresscode-section p, .playlist-section p, .rsvp-section p{
     margin: 10px 0;
-    font-size: 18px;
+    font-size: 80px;
     color: black;
 }
 .gifts-section, .filter-section{
@@ -353,13 +333,15 @@ h1, h2, h3, h4, h5, h6 {
     justify-content: center;
     text-align: center;
     margin: 0 auto;
+    margin-top: 50px;
 }
 .unit {
-    width: 70px;
-    height: 70px;
+    width: 250px;
+    height: 250px;
+    border-radius: 100%;
     margin: 0;
     padding: 5px 10px;
-    background-color: rgba(178, 155, 104, 0.52);
+    background-color: #987326;
     border: solid 1px white;
     text-align: center;
     display: flex;
@@ -367,13 +349,13 @@ h1, h2, h3, h4, h5, h6 {
     align-items: center;
 }
 .number {
-    font-size: 86px;
+    font-size: 90px;
     color: white;
     text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
     text-align: center;
 }
 .label {
-    font-size: 24px;
+    font-size: 74px;
     color: white;
     text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
     text-align: center;
@@ -388,6 +370,7 @@ h1, h2, h3, h4, h5, h6 {
     transition: background-color 0.3s;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8); /* Sombra alrededor de la imagen */
     border-radius: 5px;   
+    font-size: 40px;
 }
 .wishes-section button{
     padding: 10px 20px;
@@ -399,6 +382,7 @@ h1, h2, h3, h4, h5, h6 {
     transition: background-color 0.3s;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8); /* Sombra alrededor de la imagen */
     border-radius: 5px;
+    font-size: 40px;
 }
 .wishes-section button:hover {
     background-color: black;
@@ -410,12 +394,12 @@ h1, h2, h3, h4, h5, h6 {
     padding: 10px;
 }
 #wish-form h3 {
-    font-size: 20px;
+    font-size: 90px;
     margin-bottom: 10px;
     text-transform: initial;
 }
 #wish-form label {
-    font-size: 18px;
+    font-size: 60px;
     margin: 5px 0;
     display: block;
 }
@@ -429,8 +413,8 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 10px;
 }
 .gallery-main img {
-    width: 382px;
-    height: 382px;
+    width: 850px;
+    height: 850px;
     object-fit: cover;
     cursor: pointer;
     transition: transform 0.3s;
@@ -444,8 +428,8 @@ h1, h2, h3, h4, h5, h6 {
     gap: 10px;
 }
 .gallery-thumbs img {
-    width: 100px;
-    height: 100px;
+    width: 300px;
+    height: 300px;
     object-fit: cover;
     cursor: pointer;
     transition: transform 0.3s;
@@ -468,8 +452,8 @@ h1, h2, h3, h4, h5, h6 {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 390px; 
-    height: 790px; 
+    width: 950px; 
+    height: 990px; 
     background-color: #ffffffa1; 
     z-index: 1000;
     padding: 20px;
@@ -504,7 +488,7 @@ h1, h2, h3, h4, h5, h6 {
     text-align: center;
     padding: 10px 0;
     margin: -5px 0 0 0;
-    font-size: 24px;
+    font-size: 64px;
 }
 footer {
     background-color: #333;
@@ -520,14 +504,14 @@ footer .social-icons {
 }
 footer .social-icons a {
     color: white;
-    font-size: 24px;
+    font-size: 44px;
     transition: color 0.3s;
 }
 footer .social-icons a:hover {
     color: #b29a68;
 }
 footer .logo img {
-    width: 70px;
+    width: 100px;
     height: auto;
 }
 .texto-play, .icono-contenedor {
