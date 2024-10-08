@@ -152,24 +152,29 @@ document.addEventListener("DOMContentLoaded", function() {
         observer.observe(element);
     });
 });
+//fin de la funcion de scroll
 
- // Función para cambiar la foto principal en la galería
- function changePhoto(element) {
-    const mainPhoto = document.getElementById('main-photo');
+//Inicio de funcion de la galeria
+// Función para cambiar la foto principal en la galería
+function changePhoto(element) {
+    const mainPhoto = document.getElementById('main-photo-modal');
     mainPhoto.src = element.src;
 }
 });
 
 //galeria
 function changePhoto(element) {
-    const mainPhotoModal = document.getElementById('main-photo-modal');
-    const mainPhoto = document.getElementById('main-photo');
+    const mainPhotoModal = document.getElementById('main-photo');
+    const mainPhoto = document.getElementById('main-photo-modal');
 
     // Actualizar la imagen del modal y la imagen principal
-    mainPhotoModal.src = element.src; // Imagen del modal
-    mainPhoto.src = element.src; // Actualizar la imagen principal
+    mainPhoto.src = element.src; // Imagen del modal
+    mainPhotoModal.src = element.src; // Actualizar la imagen principal
 
-    openModal();
+     // Si la imagen seleccionada NO es la imagen principal (miniaturas), abrir el modal
+     if (element !== mainPhoto) {
+        openModal();
+    }
 }
 
 function openModal() {
@@ -205,6 +210,8 @@ document.getElementById('photo-modal').addEventListener('click', function(event)
     event.stopPropagation(); // Esto evita que el clic fuera del modal lo cierre automáticamente
     closeModal(); // Solo cierra si haces clic en el fondo del modal
 });
+
+//termina la funcion de galeria
 //buenos deseos
 let wishes = [];
 
