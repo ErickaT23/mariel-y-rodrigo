@@ -262,3 +262,12 @@ document.addEventListener("DOMContentLoaded", function() {
         observer.observe(element);
     });
 });
+//funcion playlist
+function openSpotifyPlaylist() {
+    var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+    if (isMobile) {
+        window.location.href = 'intent://playlist/1ZozldIvxmrReCQbrNshmI#Intent;scheme=spotify;package=com.spotify.music;end';
+    } else {
+        window.location.href = 'https://open.spotify.com/playlist/1ZozldIvxmrReCQbrNshmI';
+    }
+}
